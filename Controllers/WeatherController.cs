@@ -54,7 +54,7 @@ namespace weatherMvc.Controllers
                 ViewModel.currently = response.currently;
                 ViewModel.daily     = response.daily;
                 ViewModel.flags = response.flags;
-                ViewModel.hourly = response.hourly;
+                ViewModel.hourly = response.hourly; 
             }
             
             await _context.WeatherData.AddAsync(response);
