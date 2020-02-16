@@ -1,0 +1,30 @@
+@model weatherMvc.Models.LocationData
+
+@{
+    ViewData["Title"] = "SetLocation";
+}
+
+<div class="container">
+    <form method="post">
+        <div class="container">
+            <div class="form-group col-md-offset-3 col-md-5">
+                <h2>Insert your coordinates, while I'm still building  alocation search: </h2>
+                <h4> If you don't want to, try these: {41.443423},{-81.775168}</h4>
+                <label asp-for="locationLatitude" style="font-family: Arial"></label>
+                <input asp-for="locationLatitude" class="form-control" />
+                <span asp-validation-for="locationLatitude" class="text-danger"></span>
+
+
+                <label asp-for="locationLongitude" style="font-family: Arial"></label>
+                <input asp-for="locationLongitude" class="form-control" />
+                <span asp-validation-for="locationLongitude" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-group col-md-offset-3 col-md-5">
+                <button asp-controller="weather" asp-action="setLocation" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
