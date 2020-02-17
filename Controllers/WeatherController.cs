@@ -25,16 +25,16 @@ namespace weatherMvc.Controllers
         // GET: searchCity
         public IActionResult setLocation()
         {
-            var ViewModel = new LocationData(); 
-            return View(ViewModel);   
+            var ViewModel = new LocationData();
+            return View(ViewModel);
         }
 
         [HttpPost]
         public IActionResult setLocation(LocationData model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "weather", new {latitude = model.locationLatitude, longitude = model.locationLongitude});
+                return RedirectToAction("Index", "weather", new { city = model.locationCity });
             }
             else
             {
@@ -43,20 +43,20 @@ namespace weatherMvc.Controllers
         }
 
         // GET: Weather
-        public async Task<IActionResult> Index(double latitude, double longitude)
+        public async Task<IActionResult> Index(string city)
         {
             WeatherData ViewModel = new WeatherData();
-            
-            WeatherData response = await CallDarkSky(latitude, longitude);
 
-            if(response != null)
+            WeatherData response = await CallDarkSky(city);
+
+            if (response != null)
             {
                 ViewModel.currently = response.currently;
-                ViewModel.daily     = response.daily;
+                ViewModel.daily = response.daily;
                 ViewModel.flags = response.flags;
-                ViewModel.hourly = response.hourly; 
+                ViewModel.hourly = response.hourly;
             }
-            
+
             await _context.WeatherData.AddAsync(response);
 
             return View(ViewModel);
@@ -79,35 +79,7 @@ namespace weatherMvc.Controllers
             return View(weatherData);
         }
 
-        // GET: Weather/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
 
-        // POST: Weather/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        /*
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("latitude,longitude,offset,timezone")] WeatherData weatherData)
-        {
-            WeatherData weather_data = new WeatherData();
-
-            WeatherData response = await CallDarkSky();
-            
-            weather_data = response;
-
-            if (ModelState.IsValid)
-            {
-                _context.Add(weather_data);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(weather_data);
-        }
-        */
         // GET: Weather/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -194,13 +166,15 @@ namespace weatherMvc.Controllers
         }
 
 
-        public async Task<WeatherData> CallDarkSky(double latitude, double longitude)
+        public async Task<WeatherData> CallDarkSky(string city)
         {
             WeatherData weather_data = new WeatherData();
-            
             HttpClient httpclient = new HttpClient();
-            
-            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{latitude},{longitude}";               //{41.443423},{-81.775168}
+            LocationData location = new LocationData();
+
+            LocationData geocode = GetLocationFromGoogle(city).Result;
+
+            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{geocode.locationLatitude},{geocode.locationLongitude}";               //{41.443423},{-81.775168}
 
             try
             {
@@ -215,12 +189,41 @@ namespace weatherMvc.Controllers
                 await _context.SaveChangesAsync();
                 return deserializedWeather;
             }
-
             catch (Exception e)
             {
                 Console.WriteLine("Cannot Reach Dark Sky...");
                 Console.WriteLine($"Reason: {e}");
                 return weather_data;
+            }
+        }
+
+        public async Task<LocationData> GetLocationFromGoogle(string input)
+        {
+            LocationData location = new LocationData();
+            HttpClient httpClient = new HttpClient();
+
+            // build request string:
+            string baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?";
+            string cityLookup = $"address={input}&region=us&key=YOUR_API_KEY";
+
+            try
+            {
+                HttpResponseMessage response = await httpClient.GetAsync($"{baseUrl + cityLookup}");
+                response.EnsureSuccessStatusCode();
+
+                string responseBody = await response.Content.ReadAsStringAsync();
+                LocationData deserializedLocation = JsonConvert.DeserializeObject<LocationData>(responseBody);
+
+                location = deserializedLocation;
+
+                await _context.SaveChangesAsync();
+
+                return location;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Cannot reach google because {e}");
+                return location;
             }
         }
     }

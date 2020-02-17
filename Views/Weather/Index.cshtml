@@ -7,57 +7,51 @@
     ViewData["Title"] = "Weather";
 }
 
-<div class="container">
-    <div class="container">
-        <div class="row">
-            <h2>The current weather:</h2>
-            <br />
-            <div class="form-group col-md-offset-3 col-md">
-                <label asp-for="currently.temperature"></label>
-                <span class="badge">@Model.currently.temperature °F</span>
-                <br />
-                <label asp-for="currently.humidity"></label>
-                <span class="badge">@Model.currently.humidity %</span>
-                <br />
-                <label asp-for="currently.nearestStormDistance"></label>
-                <span class="badge">@Model.currently.nearestStormDistance</span>
-                <br />
-                <label asp-for="currently.windSpeed"></label>
-                <span class="badge">@Model.currently.windSpeed mp/h</span>
-                <br />
-                <label asp-for="currently.precipProbability"></label>
-                <span class="badge">@Model.currently.precipProbability</span>
-                <br />
 
-                <label asp-for="currently"></label>
-                <span class="badge">@Model.currently.precipProbability</span>
-                <br />
-            </div>
-            <div class="form-group col-md-offset-3 col-md">
-                <label asp-for="currently.summary"></label>
-                <span class="badge">The weather today is @Model.currently.summary</span>
-                <br />
-                <label asp-for="currently.precipProbability"></label>
-                <span class="badge">@Model.currently.precipProbability</span>
-                <br />
-            </div>
-        </div>
+<div class="row">
+    <h3>Current Weather:</h3>
+    <br />
+    <div class="form-group col-md-offset col-md">
+        <label asp-for="currently.temperature"></label>
+        <span class="badge">@Model.currently.temperature °F</span>
+        <br />
+        <label asp-for="currently.humidity"></label>
+        <span class="badge">@Model.currently.humidity %</span>
+        <br />
+        <label asp-for="currently.nearestStormDistance"></label>
+        <span class="badge">@Model.currently.nearestStormDistance</span>
+        <br />
+        <label asp-for="currently.windSpeed"></label>
+        <span class="badge">@Model.currently.windSpeed mp/h</span>
+        <br />
+        <label asp-for="currently.precipProbability"></label>
+        <span class="badge">There is a @Model.currently.precipProbability%</span>
+        <br />
+        <label asp-for="currently"></label>
+        <span class="badge">@Model.currently.precipProbability</span>
+        <br />
     </div>
-    <div class="container">
-        <div class="form-group col-md-offset-3 col-md-5">
-            <h3>Almanac Information:</h3>
-            <label asp-for="daily.daily_data"></label>
-            <span class="badge">@Model.daily.daily_data</span>
-            <br />
-        </div>
-    </div>
-
-    
-    <div class="container">
-        <div class="form-group col-md-offset-3 col-md-5">
-            <form method="get">
-                <button asp-controller="weather" asp-action="setLocation" class="btn btn-success">Search Again</button>
-            </form>
-        </div>
+    <div class="form-group col-md-offset col-md">
+        <label asp-for="currently.summary"></label>
+        <span class="badge">The weather today is @Model.currently.summary</span>
+        <br />
+        <label asp-for="currently.precipProbability"></label>
+        <span class="badge">@Model.currently.precipProbability</span>
+        <br />
     </div>
 </div>
+<div class="row">
+    <h3>Almanac Information:</h3>
+    <br />
+    <div class="form-group col-md-offset col-md">
+        <label asp-for="daily.daily_data"></label>
+        <span class="badge">@Model.daily.daily_data.</span>
+        <br />
+    </div>
+</div>
+<div class="row">
+    <form method="get">
+        <button asp-controller="weather" asp-action="setLocation" class="btn btn-success">Search Again</button>
+    </form>
+</div>
+
