@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using weatherMvc.Data;
 using weatherMvc.Models;
+using System.Text.RegularExpressions;
 
 namespace weatherMvc.Controllers
 {
@@ -34,7 +35,7 @@ namespace weatherMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "weather", new { city = model.locationCity });
+                return RedirectToAction("Index", "weather", new { city = model.formatted_address });
             }
             else
             {
@@ -174,7 +175,7 @@ namespace weatherMvc.Controllers
 
             LocationData geocode = GetLocationFromGoogle(city).Result;
 
-            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{geocode.locationLatitude},{geocode.locationLongitude}";               //{41.443423},{-81.775168}
+            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{geocode.location_lat},{geocode.location_long}";               //{41.443423},{-81.775168}
 
             try
             {
@@ -197,14 +198,15 @@ namespace weatherMvc.Controllers
             }
         }
 
-        public async Task<LocationData> GetLocationFromGoogle(string input)
+        public async Task<LocationData> GetLocationFromGoogle(string address)
         {
             LocationData location = new LocationData();
             HttpClient httpClient = new HttpClient();
 
             // build request string:
+             
             string baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?";
-            string cityLookup = $"address={input}&region=us&key=YOUR_API_KEY";
+            string cityLookup = $"address={address}&region=us&key=YOUR_API_KEY";
 
             try
             {

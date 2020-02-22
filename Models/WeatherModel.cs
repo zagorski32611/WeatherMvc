@@ -203,14 +203,23 @@ namespace weatherMvc.Models
         public List<AddressComponents> address_components { get; set; }
         public string formatted_address { get; set; }
         public string status { get; set; }
-        public double location_lat {get; set;}
-        public double location_long {get; set;}
+        public double location_lat { get; set; }
+        public double location_long { get; set; }
+        public string google_place_id { get; set; }
     }
 
     public class AddressComponents
     {
         [Key]
         public int addressComponentsId { get; set; }
+        public string street_number { get; set; }
+        public string route { get; set; } // street
+        public string locality { get; set; } // city
+        public string county { get; set; } // google calls this: administrative_area_level_2
+        public string state { get; set; }
+        public string country { get; set; }
+        public string postal_code { get; set; }
+        public string postal_code_suffix { get; set; }
 
 
     }
