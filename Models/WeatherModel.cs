@@ -200,13 +200,28 @@ namespace weatherMvc.Models
     {
         [Key]
         public int locationDataId { get; set; }
-        // using double since it holds ~15 to 17 digits
-        public double locationLatitude { get; set; }
-        public double locationLongitude { get; set; }
-        public string locationCity { get; set; }
-        public string locationState { get; set; }
-        public string locationCountry { get; set; }
-        public string locationZipCode { get; set; }
-        public DateTimeOffset locationTimeZone {get; set;}
+        public List<AddressComponents> address_components { get; set; }
+        public string formatted_address { get; set; }
+        public string status { get; set; }
+        public double location_lat { get; set; }
+        public double location_long { get; set; }
+        public string google_place_id { get; set; }
     }
+
+    public class AddressComponents
+    {
+        [Key]
+        public int addressComponentsId { get; set; }
+        public string street_number { get; set; }
+        public string route { get; set; } // street
+        public string locality { get; set; } // city
+        public string county { get; set; } // google calls this: administrative_area_level_2
+        public string state { get; set; }
+        public string country { get; set; }
+        public string postal_code { get; set; }
+        public string postal_code_suffix { get; set; }
+
+
+    }
+
 }
