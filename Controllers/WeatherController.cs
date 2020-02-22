@@ -71,7 +71,7 @@ namespace weatherMvc.Controllers
 
             LocationData geocode = GetLocationFromGoogle("this").Result;
 
-            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{longitude},{latitude}";               //{41.443423},{-81.775168}
+            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{latitude},{longitude}";               //{41.443423},{-81.775168}
 
             try
             {
@@ -81,7 +81,7 @@ namespace weatherMvc.Controllers
                 string responseBody = await response.Content.ReadAsStringAsync();
 
                 WeatherData deserializedWeather = JsonConvert.DeserializeObject<WeatherData>(responseBody);
-                
+
                 _context.Add(deserializedWeather);
 
                 await _context.SaveChangesAsync();
