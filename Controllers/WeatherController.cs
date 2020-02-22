@@ -59,8 +59,6 @@ namespace weatherMvc.Controllers
                 ViewModel.daily.daily_data = response.daily.daily_data;
             }
 
-            await _context.WeatherData.AddAsync(response);
-
             return View(ViewModel);
         }
 
@@ -68,11 +66,11 @@ namespace weatherMvc.Controllers
         {
             WeatherData weather_data = new WeatherData();
             HttpClient httpclient = new HttpClient();
-            LocationData location = new LocationData();
+            //LocationData location = new LocationData();
 
-            LocationData geocode = GetLocationFromGoogle("this").Result;
+            //LocationData geocode = GetLocationFromGoogle("this").Result;
 
-            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{latitude},{longitude}";               //{41.443423},{-81.775168}
+            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{latitude},{longitude}?exclude=minutely,hourly";               //{41.443423},{-81.775168}
 
             try
             {
