@@ -35,7 +35,7 @@ namespace weatherMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "weather", new { city = model.formatted_address });
+                return RedirectToAction("Index", "weather", new { longitude = model.location_long, latitude = model.location_lat });
             }
             else
             {
@@ -44,11 +44,11 @@ namespace weatherMvc.Controllers
         }
 
         // GET: Weather
-        public async Task<IActionResult> Index(string city)
+        public async Task<IActionResult> Index(double longitude, double latitude)
         {
             WeatherData ViewModel = new WeatherData();
 
-            WeatherData response = await CallDarkSky(city);
+            WeatherData response = await CallDarkSky(longitude, latitude);
 
             if (response != null)
             {
@@ -63,15 +63,15 @@ namespace weatherMvc.Controllers
             return View(ViewModel);
         }
 
-        public async Task<WeatherData> CallDarkSky(string city)
+        public async Task<WeatherData> CallDarkSky(double longitude, double latitude)
         {
             WeatherData weather_data = new WeatherData();
             HttpClient httpclient = new HttpClient();
             LocationData location = new LocationData();
 
-            LocationData geocode = GetLocationFromGoogle(city).Result;
+            LocationData geocode = GetLocationFromGoogle("this").Result;
 
-            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{geocode.location_lat},{geocode.location_long}";               //{41.443423},{-81.775168}
+            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{longitude},{latitude}";               //{41.443423},{-81.775168}
 
             try
             {
