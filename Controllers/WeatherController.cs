@@ -63,110 +63,6 @@ namespace weatherMvc.Controllers
             return View(ViewModel);
         }
 
-        // GET: Weather/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var weatherData = await _context.WeatherData
-                .FirstOrDefaultAsync(m => m.weatherDataId == id);
-            if (weatherData == null)
-            {
-                return NotFound();
-            }
-            return View(weatherData);
-        }
-
-
-        // GET: Weather/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (!(id is int))
-            {
-                return NotFound();
-            }
-
-            var weatherData = await _context.WeatherData.FindAsync(id);
-            if (weatherData == null)
-            {
-                return NotFound();
-            }
-            return View(weatherData);
-        }
-
-        // POST: Weather/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("latitude,longitude,offset,timezone")] WeatherData weatherData)
-        {
-            if (id != weatherData.weatherDataId)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(weatherData);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!WeatherDataExists(weatherData.weatherDataId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(weatherData);
-        }
-
-        // GET: Weather/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var weatherData = await _context.WeatherData
-                .FirstOrDefaultAsync(m => m.weatherDataId == id);
-            if (weatherData == null)
-            {
-                return NotFound();
-            }
-
-            return View(weatherData);
-        }
-
-        // POST: Weather/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var weatherData = await _context.WeatherData.FindAsync(id);
-            _context.WeatherData.Remove(weatherData);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool WeatherDataExists(int id)
-        {
-            return _context.WeatherData.Any(e => e.weatherDataId == id);
-        }
-
-
         public async Task<WeatherData> CallDarkSky(string city)
         {
             WeatherData weather_data = new WeatherData();
@@ -183,11 +79,13 @@ namespace weatherMvc.Controllers
                 response.EnsureSuccessStatusCode();
 
                 string responseBody = await response.Content.ReadAsStringAsync();
-                WeatherData deserializedWeather = JsonConvert.DeserializeObject<WeatherData>(responseBody);
 
-                weather_data = deserializedWeather;
+                WeatherData deserializedWeather = JsonConvert.DeserializeObject<WeatherData>(responseBody);
+                
+                _context.Add(deserializedWeather);
 
                 await _context.SaveChangesAsync();
+
                 return deserializedWeather;
             }
             catch (Exception e)
