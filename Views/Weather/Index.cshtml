@@ -7,36 +7,40 @@
     ViewData["Title"] = "Weather";
 }
 
-
 <div class="row">
     <h3>Current Weather:</h3>
     <br />
     <div class="form-group col-md-offset col-md">
-        <label asp-for="currently.temperature"></label>
-        <span class="badge">@Model.currently.temperature °F</span>
-        <br />
-        <label asp-for="currently.humidity"></label>
-        <span class="badge">@Model.currently.humidity %</span>
-        <br />
-        <label asp-for="currently.nearestStormDistance"></label>
-        <span class="badge">@Model.currently.nearestStormDistance</span>
-        <br />
-        <label asp-for="currently.windSpeed"></label>
-        <span class="badge">@Model.currently.windSpeed mp/h</span>
-        <br />
-        <label asp-for="currently.precipProbability"></label>
-        <span class="badge">There is a @Model.currently.precipProbability%</span>
-        <br />
-        <label asp-for="currently"></label>
-        <span class="badge">@Model.currently.precipProbability</span>
-        <br />
-    </div>
-    <div class="form-group col-md-offset col-md">
         <label asp-for="currently.summary"></label>
         <span class="badge">The weather today is @Model.currently.summary</span>
         <br />
-        <label asp-for="currently.precipProbability"></label>
-        <span class="badge">@Model.currently.precipProbability</span>
+
+        <label asp-for="currently.temperature">Temperature</label>
+        <span class="badge">@Model.currently.temperature °F</span>
+        <br />
+
+        <label asp-for="currently.humidity">Humidity</label>
+        <span class="badge">@Model.currently.humidity %</span>
+        <br />
+
+        <label asp-for="currently.windGust">Wind Gust</label>
+        <span class="badge">@Model.currently.windGust mp/h</span>
+        <br />
+
+        <label asp-for="currently.windSpeed">Wind Speed</label>
+        <span class="badge">@Model.currently.windSpeed mp/h</span>
+        <br />
+
+        <label asp-for="currently.windBearing">Wind Bearing</label>
+        <span class="badge">@Model.currently.windBearing</span>
+        <br />
+
+        <label asp-for="currently.precipProbability">Chance of Precipitation</label>
+        <span class="badge">@Model.currently.precipProbability%</span>
+        <br />
+
+        <label asp-for="currently.visibility">Current Visibility</label>
+        <span class="badge">@Model.currently.visibility miles</span>
         <br />
     </div>
 </div>
@@ -44,8 +48,12 @@
     <h3>Almanac Information:</h3>
     <br />
     <div class="form-group col-md-offset col-md">
-        <label asp-for="daily.daily_data"></label>
-        <span class="badge">@Model.daily.daily_data.</span>
+        <label asp-for="daily.daily_data[0].moonPhase"></label>
+        <span class="badge">@Model.daily.daily_data[0].moonPhase</span>
+        <br />
+
+        <label asp-for="daily.daily_data[0].ozone"></label>
+        <span class="badge">@Model.daily.daily_data[0].ozone</span>
         <br />
     </div>
 </div>
