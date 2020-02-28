@@ -60,7 +60,10 @@
     <div class="form-group col-md-offset col-md">
         @for(int i = 0; i < @Model.daily.data.Count(); i ++)
         {
-            <span class="badge">@Model.daily.data[i].summary</span>
+            <span class="badge">This will eventually the date time: @Model.daily.data[i].time</span> <br />
+            <span class="badge">Summary: @Model.daily.data[i].summary</span> <br />
+            <span class="badge">High Temp: @Model.daily.data[i].temperatureHigh</span> <br />
+            <span class="badge">High Temp Time: @Model.daily.data[i].temperatureHighTime</span> <br />
             <br />
         }
     </div>

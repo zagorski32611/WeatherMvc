@@ -192,10 +192,12 @@ namespace weatherMvc.Models
 
         [JsonPropertyName("daily.data.dewPoint")]
         public double dewPoint { get; set; }
+
         [JsonPropertyName("daily.data.humidity")]
         public double humidity { get; set; }
         [JsonPropertyName("daily.data.pressure")]
         public double pressure { get; set; }
+
         [JsonPropertyName("daily.data.windSpeed")]
         public double windSpeed { get; set; }
         [JsonPropertyName("daily.data.windGust")]
