@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace weatherMvc.Models
 {
@@ -63,6 +64,7 @@ namespace weatherMvc.Models
         public List<HourlyData> hourly_data { get; set; }
     }
 
+    
     public class Daily
     {
         [Key]
@@ -124,25 +126,59 @@ namespace weatherMvc.Models
         public double ozone { get; set; }
     }
 
+    [JsonConverter(typeof(DailyData))]
     public class DailyData
     {
         [Key]
+        [JsonPropertyName("daily.daily_data.dailyDataId")]
         public int dailyDataId { get; set; }
+
+        [JsonPropertyName("daily.daily_data.time")]
         public DateTime time { get; set; }
+
+        [JsonPropertyName("daily.daily_data.summary")]
         public string summary { get; set; }
+
+        [JsonPropertyName("daily.daily_data.icon")]
         public string icon { get; set; }
+
+        [JsonPropertyName("daily.daily_data.sunriseTime")]
         public DateTime sunriseTime { get; set; }
+
+        [JsonPropertyName("daily.daily_data.sunsetTime")]
         public DateTime sunsetTime { get; set; }
+
+        [JsonPropertyName("daily.daily_data.moonPhase")]
         public double moonPhase { get; set; }
+
+        [JsonPropertyName("daily.daily_data.precipIntensity")]
         public double precipIntensity { get; set; }
+
+        [JsonPropertyName("daily.daily_data.precipIntensityMax")]
         public double precipIntensityMax { get; set; }
+
+        [JsonPropertyName("daily.daily_data.precipIntensityMaxTime")]
         public DateTime precipIntensityMaxTime { get; set; }
+
+        [JsonPropertyName("daily.daily_data.precipProbability")]
         public double precipProbability { get; set; }
+
+        [JsonPropertyName("daily.daily_data.precipType")]
         public string precipType { get; set; }
+
+        [JsonPropertyName("daily.daily_data.temperatureHigh")]
         public double temperatureHigh { get; set; }
+
+        [JsonPropertyName("daily.daily_data.temperatureHighTime")]
         public DateTime temperatureHighTime { get; set; }
+
+        [JsonPropertyName("daily.daily_data.temperatureLow")]
         public double temperatureLow { get; set; }
+
+        [JsonPropertyName("daily.daily_data.temperatureLowTime")]
         public DateTime temperatureLowTime { get; set; }
+
+        [JsonPropertyName("daily.daily_data.apparentTemperatureHigh")]
         public double apparentTemperatureHigh { get; set; }
         public DateTime apparentTemperatureHighTime { get; set; }
         public double apparentTemperatureLow { get; set; }

@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/joe/development/netcore/weatherMvc/weatherMvc/weatherMvc.csproj": {}
+    "C:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\WeatherMvc\\weatherMvc.csproj": {}
   },
   "projects": {
-    "/home/joe/development/netcore/weatherMvc/weatherMvc/weatherMvc.csproj": {
+    "C:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\WeatherMvc\\weatherMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/joe/development/netcore/weatherMvc/weatherMvc/weatherMvc.csproj",
+        "projectUniqueName": "C:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\WeatherMvc\\weatherMvc.csproj",
         "projectName": "weatherMvc",
-        "projectPath": "/home/joe/development/netcore/weatherMvc/weatherMvc/weatherMvc.csproj",
-        "packagesPath": "/home/joe/.nuget/packages/",
-        "outputPath": "/home/joe/development/netcore/weatherMvc/weatherMvc/obj/",
+        "projectPath": "C:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\WeatherMvc\\weatherMvc.csproj",
+        "packagesPath": "C:\\Users\\jzagorski\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\WeatherMvc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/home/joe/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\jzagorski\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -92,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

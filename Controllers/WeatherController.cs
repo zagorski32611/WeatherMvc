@@ -66,8 +66,8 @@ namespace weatherMvc.Controllers
         {
             WeatherData weather_data = new WeatherData();
             HttpClient httpclient = new HttpClient();
+            
             //LocationData location = new LocationData();
-
             //LocationData geocode = GetLocationFromGoogle("this").Result;
 
             string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{latitude},{longitude}?exclude=minutely,hourly";               //{41.443423},{-81.775168}
@@ -81,11 +81,13 @@ namespace weatherMvc.Controllers
 
                 WeatherData deserializedWeather = JsonConvert.DeserializeObject<WeatherData>(responseBody);
 
-                _context.Add(deserializedWeather);
+                weather_data = deserializedWeather;
 
-                await _context.SaveChangesAsync();
+                //_context.Add(weather_data);
 
-                return deserializedWeather;
+                //await _context.SaveChangesAsync();
+
+                return weather_data;
             }
             catch (Exception e)
             {
@@ -101,7 +103,7 @@ namespace weatherMvc.Controllers
             HttpClient httpClient = new HttpClient();
 
             // build request string:
-             
+
             string baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?";
             string cityLookup = $"address={address}&region=us&key=YOUR_API_KEY";
 

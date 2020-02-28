@@ -45,21 +45,24 @@
     </div>
 </div>
 <div class="row">
-    <h3>Almanac Information:</h3>
+    <h3>Weekly Forcast:</h3>
     <br />
     <div class="form-group col-md-offset col-md">
-        <label asp-for="daily.daily_data[0].moonPhase"></label>
-        <span class="badge">@Model.daily.daily_data[0].moonPhase</span>
-        <br />
-
-        <label asp-for="daily.daily_data[0].ozone"></label>
-        <span class="badge">@Model.daily.daily_data[0].ozone</span>
+        <label asp-for="@Model.daily.summary">Weekly Summary:</label>
+        <span class="badge">@Model.daily.summary</span>
         <br />
     </div>
+    @foreach(var day in @Model.daily.daily_data)
+    {
+        <div class="form-group col-md-offset col-md">
+            <label asp-for="@day.summary">:</label>
+            <span class="badge">@Model.daily.summary</span>
+            <br />
+        </div>
+    }
 </div>
 <div class="row">
     <form method="get">
         <button asp-controller="weather" asp-action="setLocation" class="btn btn-success">Search Again</button>
     </form>
 </div>
-
