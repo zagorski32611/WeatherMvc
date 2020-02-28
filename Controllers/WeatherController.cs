@@ -56,7 +56,7 @@ namespace weatherMvc.Controllers
                 ViewModel.daily = response.daily;
                 ViewModel.flags = response.flags;
                 ViewModel.hourly = response.hourly;
-                ViewModel.daily.daily_data = response.daily.daily_data;
+                ViewModel.daily.data = response.daily.data;
             }
 
             return View(ViewModel);
@@ -66,7 +66,7 @@ namespace weatherMvc.Controllers
         {
             WeatherData weather_data = new WeatherData();
             HttpClient httpclient = new HttpClient();
-            
+
             //LocationData location = new LocationData();
             //LocationData geocode = GetLocationFromGoogle("this").Result;
 

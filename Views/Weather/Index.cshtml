@@ -52,7 +52,7 @@
         <span class="badge">@Model.daily.summary</span>
         <br />
     </div>
-    @foreach(var day in @Model.daily.daily_data)
+    @foreach(var day in @Model.daily.data)
     {
         <div class="form-group col-md-offset col-md">
             <label asp-for="@day.summary">:</label>

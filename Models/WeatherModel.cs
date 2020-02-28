@@ -64,14 +64,14 @@ namespace weatherMvc.Models
         public List<HourlyData> hourly_data { get; set; }
     }
 
-    
+
     public class Daily
     {
         [Key]
         public int dailyId { get; set; }
         public string summary { get; set; }
         public string icon { get; set; }
-        public List<DailyData> daily_data { get; set; }
+        public List<DailyData> data { get; set; }
     }
 
     public class Alert
@@ -106,7 +106,7 @@ namespace weatherMvc.Models
     {
         [Key]
         public int hourlyDataId { get; set; }
-        public DateTime time { get; set; }
+        public long time { get; set; }
         public string summary { get; set; }
         public string icon { get; set; }
         public double precipIntensity { get; set; }
@@ -130,79 +130,117 @@ namespace weatherMvc.Models
     public class DailyData
     {
         [Key]
-        [JsonPropertyName("daily.daily_data.dailyDataId")]
+        [JsonPropertyName("daily.data.dailyDataId")]
         public int dailyDataId { get; set; }
 
-        [JsonPropertyName("daily.daily_data.time")]
-        public DateTime time { get; set; }
+        [JsonPropertyName("daily.data.time")]
+        public long time { get; set; }
 
-        [JsonPropertyName("daily.daily_data.summary")]
+        [JsonPropertyName("daily.data.summary")]
         public string summary { get; set; }
 
-        [JsonPropertyName("daily.daily_data.icon")]
+        [JsonPropertyName("daily.data.icon")]
         public string icon { get; set; }
 
-        [JsonPropertyName("daily.daily_data.sunriseTime")]
-        public DateTime sunriseTime { get; set; }
+        [JsonPropertyName("daily.data.sunriseTime")]
+        public long sunriseTime { get; set; }
 
-        [JsonPropertyName("daily.daily_data.sunsetTime")]
-        public DateTime sunsetTime { get; set; }
+        [JsonPropertyName("daily.data.sunsetTime")]
+        public long sunsetTime { get; set; }
 
-        [JsonPropertyName("daily.daily_data.moonPhase")]
+        [JsonPropertyName("daily.data.moonPhase")]
         public double moonPhase { get; set; }
 
-        [JsonPropertyName("daily.daily_data.precipIntensity")]
+        [JsonPropertyName("daily.data.precipIntensity")]
         public double precipIntensity { get; set; }
 
-        [JsonPropertyName("daily.daily_data.precipIntensityMax")]
+        [JsonPropertyName("daily.data.precipIntensityMax")]
         public double precipIntensityMax { get; set; }
 
-        [JsonPropertyName("daily.daily_data.precipIntensityMaxTime")]
-        public DateTime precipIntensityMaxTime { get; set; }
+        [JsonPropertyName("daily.data.precipIntensityMaxTime")]
+        public long precipIntensityMaxTime { get; set; }
 
-        [JsonPropertyName("daily.daily_data.precipProbability")]
+        [JsonPropertyName("daily.data.precipProbability")]
         public double precipProbability { get; set; }
 
-        [JsonPropertyName("daily.daily_data.precipType")]
+        [JsonPropertyName("daily.data.precipType")]
         public string precipType { get; set; }
 
-        [JsonPropertyName("daily.daily_data.temperatureHigh")]
+        [JsonPropertyName("daily.data.temperatureHigh")]
         public double temperatureHigh { get; set; }
 
-        [JsonPropertyName("daily.daily_data.temperatureHighTime")]
-        public DateTime temperatureHighTime { get; set; }
+        [JsonPropertyName("daily.data.temperatureHighTime")]
+        public long temperatureHighTime { get; set; }
 
-        [JsonPropertyName("daily.daily_data.temperatureLow")]
+        [JsonPropertyName("daily.data.temperatureLow")]
         public double temperatureLow { get; set; }
 
-        [JsonPropertyName("daily.daily_data.temperatureLowTime")]
-        public DateTime temperatureLowTime { get; set; }
+        [JsonPropertyName("daily.data.temperatureLowTime")]
+        public long temperatureLowTime { get; set; }
 
-        [JsonPropertyName("daily.daily_data.apparentTemperatureHigh")]
+        [JsonPropertyName("daily.data.apparentTemperatureHigh")]
         public double apparentTemperatureHigh { get; set; }
-        public DateTime apparentTemperatureHighTime { get; set; }
+
+        [JsonPropertyName("daily.data.apparentTemperatureHighTime")]
+        public long apparentTemperatureHighTime { get; set; }
+
+        [JsonPropertyName("daily.data.apparentTemperatureLow")]
         public double apparentTemperatureLow { get; set; }
-        public DateTime apparentTemperatureLowTime { get; set; }
+
+        [JsonPropertyName("daily.data.apparentTemperatureHighTime")]
+        public long apparentTemperatureLowTime { get; set; }
+
+        [JsonPropertyName("daily.data.dewPoint")]
         public double dewPoint { get; set; }
+        [JsonPropertyName("daily.data.humidity")]
         public double humidity { get; set; }
+        [JsonPropertyName("daily.data.pressure")]
         public double pressure { get; set; }
+        [JsonPropertyName("daily.data.windSpeed")]
         public double windSpeed { get; set; }
+        [JsonPropertyName("daily.data.windGust")]
         public double windGust { get; set; }
-        public DateTime windGustTime { get; set; }
+        [JsonPropertyName("daily.data.windGustTime")]
+        public long windGustTime { get; set; }
+
+        [JsonPropertyName("daily.data.windBearing")]
         public int windBearing { get; set; }
+
+        [JsonPropertyName("daily.data.cloudCover")]
         public double cloudCover { get; set; }
+
+        [JsonPropertyName("daily.data.uvIndex")]
         public int uvIndex { get; set; }
-        public DateTime uvIndexTime { get; set; }
+        [JsonPropertyName("daily.data.uvIndexTime")]
+        public long uvIndexTime { get; set; }
+
+        [JsonPropertyName("daily.data.visibility")]
         public double visibility { get; set; }
+        [JsonPropertyName("daily.data.ozone")]
         public double ozone { get; set; }
+        [JsonPropertyName("daily.data.temperatureMin")]
         public double temperatureMin { get; set; }
-        public DateTime temperatureMinTime { get; set; }
+
+        [JsonPropertyName("daily.data.temeratueMinTime")]
+        public long temperatureMinTime { get; set; }
+
+        [JsonPropertyName("daily.data.temperatureMax")]
         public double temperatureMax { get; set; }
-        public DateTime temperatureMaxTime { get; set; }
+
+        [JsonPropertyName("daily.data.temperatureMaxTime")]
+        public long temperatureMaxTime { get; set; }
+
+        [JsonPropertyName("daily.data.apparentTemperatureMin")]
         public double apparentTemperatureMin { get; set; }
-        public DateTime apparentTemperatureMinTime { get; set; }
+
+        [JsonPropertyName("daily.data.apparentTemperatureMinTime")]
+        public long apparentTemperatureMinTime { get; set; }
+
+        [JsonPropertyName("daily.data.apparentTemperatureMax")]
         public double apparentTemperatureMax { get; set; }
-        public DateTime apparentTemperatureMaxTime { get; set; }
+
+        [JsonPropertyName("daily.data.apparentTemperatureMaxTime")]
+        public long apparentTemperatureMaxTime { get; set; }
     }
 
     public class AlertData
