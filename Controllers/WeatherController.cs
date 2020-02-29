@@ -23,7 +23,6 @@ namespace weatherMvc.Controllers
         }
 
 
-        // GET: searchCity
         public IActionResult setLocation()
         {
             var ViewModel = new LocationData();
@@ -43,7 +42,6 @@ namespace weatherMvc.Controllers
             }
         }
 
-        // GET: Weather
         public async Task<IActionResult> Index(double longitude, double latitude)
         {
             WeatherData ViewModel = new WeatherData();
@@ -58,9 +56,9 @@ namespace weatherMvc.Controllers
                 ViewModel.hourly = response.hourly;
                 ViewModel.daily.data = response.daily.data;
             }
-
             return View(ViewModel);
         }
+
 
         public async Task<WeatherData> CallDarkSky(double longitude, double latitude)
         {
@@ -126,6 +124,16 @@ namespace weatherMvc.Controllers
                 Console.WriteLine($"Cannot reach google because {e}");
                 return location;
             }
+        }
+
+        public static DateTime GetDateTime(long unixTimeStamp)
+        {
+            DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, kind: System.DateTimeKind.Utc);
+            //long longTime = long.Parse(unixTimeStamp);
+            long unixTimeStampInTicks = (long)(unixTimeStamp * TimeSpan.TicksPerSecond);
+
+            DateTime dateTime = new DateTime(ticks: unixStart.Ticks + unixTimeStampInTicks, kind: System.DateTimeKind.Utc);
+            return dateTime.ToLocalTime();
         }
     }
 }
