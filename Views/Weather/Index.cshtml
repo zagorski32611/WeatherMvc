@@ -8,48 +8,39 @@
 }
 
 <div class="row">
-    <h3>Current Weather:</h3>
+    <h3 class="jumbotron">Current Weather:</h3>
     <br />
     <div class="form-group col-md-offset col-md">
         <label asp-for="currently.summary"></label>
-        <span class="badge">The weather today is @Model.currently.summary</span>
+        <span>The weather today is @Model.currently.summary</span>
         <br />
 
         <label asp-for="currently.temperature">Temperature</label>
-        <span class="badge">@Model.currently.temperature °F</span>
+        <span>@Model.currently.temperature °F</span>
         <br />
 
         <label asp-for="currently.humidity">Humidity</label>
-        <span class="badge">@Model.currently.humidity %</span>
+        <span>@Model.currently.humidity %</span>
         <br />
 
         <label asp-for="currently.windGust">Wind Gust</label>
-        <span class="badge">@Model.currently.windGust mp/h</span>
+        <span>@Model.currently.windGust mp/h</span>
         <br />
 
         <label asp-for="currently.windSpeed">Wind Speed</label>
-        <span class="badge">@Model.currently.windSpeed mp/h</span>
+        <span>@Model.currently.windSpeed mp/h</span>
         <br />
 
         <label asp-for="currently.windBearing">Wind Bearing</label>
-        <span class="badge">@Model.currently.windBearing</span>
+        <span>@Model.currently.windBearing</span>
         <br />
 
         <label asp-for="currently.precipProbability">Chance of Precipitation</label>
-        <span class="badge">@Model.currently.precipProbability%</span>
+        <span>@Model.currently.precipProbability%</span>
         <br />
 
         <label asp-for="currently.visibility">Current Visibility</label>
-        <span class="badge">@Model.currently.visibility miles</span>
-        <br />
-    </div>
-</div>
-
-<div class="row">
-    <h3>Weekly Forecast:</h3>
-    <br />
-    <div class="form-group col-md-offset col-md">
-        <span class="badge">@Model.daily.summary</span>
+        <span>@Model.currently.visibility miles</span>
         <br />
     </div>
 </div>
@@ -60,10 +51,17 @@
     <div class="form-group col-md-offset col-md">
         @for(int i = 0; i < @Model.daily.data.Count(); i ++)
         {
-            <span class="badge">This will eventually the date time: @Model.daily.data[i].time</span> <br />
-            <span class="badge">Summary: @Model.daily.data[i].summary</span> <br />
-            <span class="badge">High Temp: @Model.daily.data[i].temperatureHigh</span> <br />
-            <span class="badge">High Temp Time: @Model.daily.data[i].temperatureHighTime</span> <br />
+            <label>This will eventually the date time:</label>
+            <span class="badge"> @Model.daily.data[i].time</span> 
+            <br />
+            <label>Summary:</label> 
+            <span class="badge">@Model.daily.data[i].summary</span>
+            <br />
+            <label>High Temp:</label> 
+            <span class="badge">@Model.daily.data[i].temperatureHigh °F</span>
+            <br />
+            <label>High Temp Time:</label> 
+            <span class="badge">@Model.daily.data[i].temperatureHighTime</span>
             <br />
         }
     </div>
