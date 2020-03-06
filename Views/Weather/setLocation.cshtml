@@ -6,24 +6,20 @@
 
 <div class="container">
     <form method="post">
-        <div class="container">
-            <div class="form-group col-md-offset-3 col-md-5">
-                <h2>What city are you in? </h2>
-                <h6> This app will call Google to get your coordinates and then call DarkSky to get the weather</h6>
-                <label asp-for="location_lat" style="font-family: Arial"></label>
-                <input asp-for="location_lat" class="form-control" />
-                <span asp-validation-for="location_lat" class="text-danger"></span>
+        <div class="text-center">
+            <h2>What city are you in? </h2>
+            <h6> This app will call Google to get your coordinates and then call DarkSky to get the weather</h6>
+            <label asp-for="location_lat" style="font-family: Arial">Latitude</label>
+            <input asp-for="location_lat" class="form-control" />
+            <span asp-validation-for="location_lat" class="text-danger"></span>
 
-
-                <label asp-for="location_long" style="font-family: Arial"></label>
-                <input asp-for="location_long" class="form-control" />
-                <span asp-validation-for="location_long" class="text-danger"></span>
-            </div>
+            <label asp-for="location_long" style="font-family: Arial">Longitude</label>
+            <input asp-for="location_long" class="form-control col-sm" />
+            <span asp-validation-for="location_long" class="text-danger"></span>
         </div>
-        <div class="container">
-            <div class="form-group col-md-offset-3 col-md-5">
-                <button asp-controller="weather" asp-action="setLocation" class="btn btn-primary">Search</button>
-            </div>
+        <br />
+        <div class="text-center">
+            <button asp-controller="weather" asp-action="setLocation" class="btn btn-primary">Get Weather</button>
         </div>
     </form>
 </div>
