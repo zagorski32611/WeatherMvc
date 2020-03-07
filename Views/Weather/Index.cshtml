@@ -8,76 +8,54 @@
 }
 
 
-<div class="container">
-    <header id="currentDetails">
-        <div class="row">  
+<div class="container">   
+    <header class="bg-light border-bottom box-shadow">
+        <div class="row">
             <div class="col">
                 <h4 class="badge">Humidity @Model.currently.humidity</h4>
-              </div>
-              <div class="col">
-                <h4 class="badge">Dew Point @Model.currently.dewPoint</h4>
-              </div> 
-              <div class="col">
-                <h4 class="badge">Wind Speed: @Model.currently.windSpeed</h4>
-              </div>
-              <div class="col">
-                <h4 class="badge">Nearest Storm @Model.currently.nearestStormDistance mi</h4>
-              </div>
-              <div class="col">
-                <h4 class="badge">Ozone @Model.currently.ozone</h4>
-              </div>
-              <div class="col">
-                <h4 class="badge">Visibility @Model.currently.visibility</h4>
-              </div>
-              <div class="col">
-                  <h4 class="badge">Pressure @Model.currently.pressure</h4>
-              </div>
+            </div>
+            <div class="col">
+              <h4 class="badge">Dew Point @Model.currently.dewPoint</h4>
+            </div> 
+            <div class="col">
+                <h4 class="badge">Wind Speed @Model.currently.windSpeed</h4>
+            </div>
+            <div class="col">
+              <h4 class="badge">Nearest Storm @Model.currently.nearestStormDistance mi</h4>
+            </div>
+            <div class="col">
+              <h4 class="badge">Ozone @Model.currently.ozone</h4>
+            </div>
+            <div class="col">
+              <h4 class="badge">Visibility @Model.currently.visibility</h4>
+            </div>
+            <div class="col">
+                  <h4 class="badge" id="badge-custom-danger">Pressure @Model.currently.pressure</h4>
             </div>
         </div>
     </header>
 </div>
+
         
 
-<div class="container">
-<div class="row">
-    <h3 class="jumbotron">Current Weather:</h3>
-    <br />
-    <div class="form-group col-md-offset col-md">
-        <label asp-for="currently.summary"></label>
-        <span>The weather today is @Model.currently.summary</span>
-        <br />
+<div class="container" id="currentWeatherMain">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="~/images/32.png" />
+        </div>
+        <div clas="col-md-3">
+            <span class="badge">@Model.currently.summary</span>
+        </div>
+        <div class="col-md-3">
+            <span class="badge">Chance of Precipitation: @Model.currently.precipProbability</span>
+        </div>
+    </div>
+    <div class="row">
 
-        <label asp-for="currently.temperature">Temperature</label>
-        <span>@Model.currently.temperature °F</span>
-        <br />
-
-        <label asp-for="currently.humidity">Humidity</label>
-        <span>@Model.currently.humidity %</span>
-        <br />
-
-        <label asp-for="currently.windGust">Wind Gust</label>
-        <span>@Model.currently.windGust mp/h</span>
-        <br />
-
-        <label asp-for="currently.windSpeed">Wind Speed</label>
-        <span>@Model.currently.windSpeed mp/h</span>
-        <br />
-
-        <label asp-for="currently.windBearing">Wind Bearing</label>
-        <span>@Model.currently.windBearing</span>
-        <br />
-
-        <label asp-for="currently.precipProbability">Chance of Precipitation</label>
-        <span>@Model.currently.precipProbability%</span>
-        <br />
-
-        <label asp-for="currently.visibility">Current Visibility</label>
-        <span>@Model.currently.visibility miles</span>
-        <br />
     </div>
 </div>
-</div>
 
+<!--
 <div class="row">
     <h3> The Next 7 Days:</h3>
     <br />
@@ -99,10 +77,13 @@
         }
     </div>
 </div>
+-->
+
 
 <div class="row">
     <form method="get">
-        <button asp-controller="weather" asp-action="setLocation" class="btn btn-success">Search Again</button>
+        <button asp-controller="weather" asp-action="setLocation" class="btn btn-success" id="custom-button">Search Again</button>
     </form>
 </div>
 <!-- color theme: https://coolors.co/50514f-f25f5c-ffe066-247ba0-70c1b3 -->
+
