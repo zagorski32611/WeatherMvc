@@ -237,7 +237,7 @@ th {
 }
 
 label {
-  display: inline-block;
+  display: iline-block;
   margin-bottom: 0.5rem;
 }
 
@@ -5371,12 +5371,13 @@ input[type="button"].btn-block {
   display: inline-block;
   padding: 0.25em 0.4em;
   font-size: 100%;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25rem;
+  border-style: #70c1b3;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
