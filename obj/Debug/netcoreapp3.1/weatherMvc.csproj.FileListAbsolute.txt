@@ -494,3 +494,5 @@ c:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\stati
 c:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\staticwebassets\weatherMvc.StaticWebAssets.xml
 c:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\weatherMvc.dll
 c:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\weatherMvc.pdb
+C:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_currentWeatherMain.cshtml.g.cs
+C:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_WeatherDetails.cshtml.g.cs
