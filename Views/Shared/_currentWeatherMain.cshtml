@@ -1,14 +1,22 @@
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
         <img src="~/images/32.png" />
     </div>
-    <div clas="col-md-3">
-        <span class="badge">@Model.currently.summary</span>
+    <div clas="col-md-1">
+        <h2>@Model.currently.temperature</h2>
+        <h2>@Model.currently.summary</h2>
     </div>
-    <div class="col-md-3">
-        <span class="badge">Chance of Precipitation: @Model.currently.precipProbability</span>
+    <div class="col-md-1">
     </div>
 </div>
 <div class="row">
-
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-1">
+        <h2>Today's High: {}</h2>
+        <h2>Today's Low: {}</h2>
+    </div>
+    <div class="col-md-1">
+        <h2>Feels like: {}</h2>
+    </div>
 </div>

@@ -38,7 +38,7 @@ namespace weatherMvc.Controllers
             }
             else
             {
-                return View(model);
+                return View(model); 
             }
         }
 
