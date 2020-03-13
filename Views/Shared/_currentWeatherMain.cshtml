@@ -2,8 +2,8 @@
     <div class="col-md-2">
         <img src="~/images/32.png" />
     </div>
-    <div clas="col-md-1">
-        <h2>@Model.currently.temperature</h2>
+    <div class="col-md-3">
+        <h2>@Model.currently.temperature F</h2>
         <h2>@Model.currently.summary</h2>
     </div>
     <div class="col-md-1">
@@ -13,10 +13,21 @@
     <div class="col-md-2">
     </div>
     <div class="col-md-1">
-        <h2>Today's High: {}</h2>
-        <h2>Today's Low: {}</h2>
+        <h2>The week ahead: @Model.daily.summary</h2>
     </div>
-    <div class="col-md-1">
-        <h2>Feels like: {}</h2>
+    <div>
     </div>
 </div>
+
+@foreach(var day in @Model.daily.data)
+{
+    <div class="row">
+        <div class="col-md-2">
+            <h2>@day.icon</h2>
+        </div>
+
+        <div class="col-md-3">
+            <h4>@day.summary</h4>  
+        </div>
+    </div>
+}
