@@ -38,7 +38,7 @@ namespace weatherMvc.Controllers
             }
             else
             {
-                return View(model); 
+                return View(model);
             }
         }
 
@@ -56,6 +56,7 @@ namespace weatherMvc.Controllers
                 ViewModel.hourly = response.hourly;
                 ViewModel.daily.data = response.daily.data;
             }
+
             return View(ViewModel);
         }
 
@@ -64,6 +65,7 @@ namespace weatherMvc.Controllers
         {
             WeatherData weather_data = new WeatherData();
             HttpClient httpclient = new HttpClient();
+
 
             //LocationData location = new LocationData();
             //LocationData geocode = GetLocationFromGoogle("this").Result;
@@ -129,7 +131,7 @@ namespace weatherMvc.Controllers
         public static DateTime GetDateTime(long unixTimeStamp)
         {
             DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, kind: System.DateTimeKind.Utc);
-            //long longTime = long.Parse(unixTimeStamp);
+
             long unixTimeStampInTicks = (long)(unixTimeStamp * TimeSpan.TicksPerSecond);
 
             DateTime dateTime = new DateTime(ticks: unixStart.Ticks + unixTimeStampInTicks, kind: System.DateTimeKind.Utc);

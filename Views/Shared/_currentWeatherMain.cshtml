@@ -1,21 +1,23 @@
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-3">
         <img src="~/images/32.png" />
     </div>
     <div class="col-md-3">
         <h2>@Model.currently.temperature F</h2>
-        <h2>@Model.currently.summary</h2>
     </div>
-    <div class="col-md-1">
+    <div class="col-md-3">
+        <h2>High: @Model.daily.data[0].temperatureHigh</h2>
+    </div>
+    <div class="col-md-3">
+        <h2>Low: @Model.daily.data[0].temperatureLow</h2>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-3">
+        <h2>@Model.currently.summary</h2>
     </div>
-    <div class="col-md-1">
-        <h2>The week ahead: @Model.daily.summary</h2>
-    </div>
-    <div>
+    <div class="col-md-3">
+        <span>There is a @Model.currently.precipProbability% chance of @Model.currently.precipType </span>
     </div>
 </div>
 
@@ -27,7 +29,8 @@
         </div>
 
         <div class="col-md-3">
-            <h4>@day.summary</h4>  
+            <h4>@day.summary</h4>
+            <h4>@day.sunriseTime</h4>  
         </div>
     </div>
 }
