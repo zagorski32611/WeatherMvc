@@ -277,11 +277,20 @@ namespace weatherMvc.Models
         [Key]
         public int locationDataId { get; set; }
         public List<AddressComponents> address_components { get; set; }
+        
+        [JsonPropertyName("results.0.formatted_address")]
         public string formatted_address { get; set; }
         public string status { get; set; }
+
+        [JsonPropertyName("results.geometry.location.lat")]
         public double location_lat { get; set; }
+
+        [JsonPropertyName("results.geometry.location.lng")]
         public double location_long { get; set; }
+        
+        [JsonPropertyName("results.0.place_id")]
         public string google_place_id { get; set; }
+        public string raw_address {get; set;}
     }
 
     public class AddressComponents
@@ -296,7 +305,6 @@ namespace weatherMvc.Models
         public string country { get; set; }
         public string postal_code { get; set; }
         public string postal_code_suffix { get; set; }
-
 
     }
 

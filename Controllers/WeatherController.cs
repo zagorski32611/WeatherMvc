@@ -34,7 +34,7 @@ namespace weatherMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "weather", new { longitude = model.location_long, latitude = model.location_lat });
+                return RedirectToAction("Index", "weather", new { longitude = model.location_long, latitude = model.location_lat, rawAddress = model.raw_address });
             }
             else
             {
@@ -42,10 +42,20 @@ namespace weatherMvc.Controllers
             }
         }
 
-        public async Task<IActionResult> Index(double longitude, double latitude)
+        public async Task<IActionResult> Index(double longitude = 0, double latitude = 0, string rawAddress = "")
         {
             WeatherData ViewModel = new WeatherData();
 
+            LocationData location = new LocationData();
+
+            if(rawAddress.Length > 0)
+            {
+                LocationData geocode = GetLocationFromGoogle(rawAddress).Result;
+                longitude = geocode.location_long;
+                latitude = geocode.location_lat;
+            }
+            
+            
             WeatherData response = await CallDarkSky(longitude, latitude);
 
             if (response != null)
@@ -55,6 +65,7 @@ namespace weatherMvc.Controllers
                 ViewModel.flags = response.flags;
                 ViewModel.hourly = response.hourly;
                 ViewModel.daily.data = response.daily.data;
+                
             }
 
             return View(ViewModel);
@@ -83,9 +94,9 @@ namespace weatherMvc.Controllers
 
                 weather_data = deserializedWeather;
 
-                //_context.Add(weather_data);
+                _context.Add(weather_data);
 
-                //await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
                 return weather_data;
             }
@@ -103,9 +114,11 @@ namespace weatherMvc.Controllers
             HttpClient httpClient = new HttpClient();
 
             // build request string:
+            string encodedAddress = System.Net.WebUtility.HtmlEncode(address);
+
 
             string baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?";
-            string cityLookup = $"address={address}&region=us&key=YOUR_API_KEY";
+            string cityLookup = $"address={address}&region=us&key=AIzaSyAvHBuqmay0q_5_k3YKBm0irl4b2FobR7s";
 
             try
             {

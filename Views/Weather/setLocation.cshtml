@@ -9,6 +9,12 @@
         <div class="text-center" id="location_center">
             <h2>What city are you in? </h2>
             <h6> This app will call Google to get your coordinates and then call DarkSky to get the weather</h6>
+            
+            <label asp-for="raw_address" style="font-family: Arial">City or Street Address:</label>
+            <input asp-for="raw_address" class="form-control" />
+            <span asp-validation-for="raw_address" class="text-danger"></span>
+
+            <h6> Or if you know your coordinates:</h6>
             <label asp-for="location_lat" style="font-family: Arial">Latitude</label>
             <input asp-for="location_lat" class="form-control" />
             <span asp-validation-for="location_lat" class="text-danger"></span>
