@@ -34,7 +34,7 @@ namespace weatherMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "weather", new { longitude = model.location_long, latitude = model.location_lat, rawAddress = model.raw_address });
+                return RedirectToAction("Index", "weather", new { longitude = model.searchLng, latitude = model.searchLng, rawAddress = model.searchAddress });
             }
             else
             {
@@ -51,8 +51,8 @@ namespace weatherMvc.Controllers
             if(rawAddress.Length > 0)
             {
                 LocationData geocode = GetLocationFromGoogle(rawAddress).Result;
-                longitude = geocode.location_long;
-                latitude = geocode.location_lat;
+                longitude = geocode.results[0].geometry.location.lng;
+                latitude = geocode.results[0].geometry.location.lat;
             }
             
             
@@ -64,6 +64,7 @@ namespace weatherMvc.Controllers
                 ViewModel.daily = response.daily;
                 ViewModel.flags = response.flags;
                 ViewModel.hourly = response.hourly;
+                ViewModel.location = response.location;
                 ViewModel.daily.data = response.daily.data;
                 
             }
@@ -94,9 +95,9 @@ namespace weatherMvc.Controllers
 
                 weather_data = deserializedWeather;
 
-                _context.Add(weather_data);
+                //_context.Add(weather_data);
 
-                await _context.SaveChangesAsync();
+                //await _context.SaveChangesAsync();
 
                 return weather_data;
             }
@@ -130,7 +131,7 @@ namespace weatherMvc.Controllers
 
                 location = deserializedLocation;
 
-                await _context.SaveChangesAsync();
+                //await _context.SaveChangesAsync();
 
                 return location;
             }
