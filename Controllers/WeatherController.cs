@@ -42,45 +42,42 @@ namespace weatherMvc.Controllers
             }
         }
 
-        public async Task<IActionResult> Index(double longitude = 0, double latitude = 0, string rawAddress = "")
+        public IActionResult Index(double longitude = 0, double latitude = 0, string rawAddress = "")
         {
-            WeatherData ViewModel = new WeatherData();
+            ViewData["weatherData"] = new WeatherData();
+            ViewData["location"] = new LocationData();
 
-            if(rawAddress.Length > 0)
+            if (rawAddress.Length > 0)
             {
                 LocationData geocode = GetLocationFromGoogle(rawAddress).Result;
-                longitude = geocode.results[0].geometry.location.lng;
-                latitude =  geocode.results[0].geometry.location.lat;
-                ViewModel.location.results[0] = geocode.results[0];
-                
-            }
-            
-            
-            WeatherData response = await CallDarkSky(longitude, latitude);
-            
-            response.location.results[0] = geocode.results[0];
+                ViewData["location"] = geocode;
 
-            if (response != null)
+                if (!(geocode is null))
+                {
+                    double result_lat = geocode.results[0].geometry.location.lat;
+                    double result_lng = geocode.results[0].geometry.location.lng;
+
+                    WeatherData weather = CallDarkSky(result_lng, result_lat).Result;
+                    ViewData["weatherData"] = weather;
+                    return View();
+                }
+                else
+                {
+                    return View("error");
+                }
+            }
+            else
             {
-                ViewModel.currently = response.currently;
-                ViewModel.daily = response.daily;
-                ViewModel.flags = response.flags;
-                ViewModel.hourly = response.hourly;
-                ViewModel.daily.data = response.daily.data;                
+                WeatherData weather = CallDarkSky(longitude, latitude).Result;
+                ViewData["weatherData"] = weather;
+                return View();
             }
-
-            return View(ViewModel);
         }
-
 
         public async Task<WeatherData> CallDarkSky(double longitude, double latitude)
         {
             WeatherData weather_data = new WeatherData();
             HttpClient httpclient = new HttpClient();
-
-
-            //LocationData location = new LocationData();
-            //LocationData geocode = GetLocationFromGoogle("this").Result;
 
             string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{latitude},{longitude}?exclude=minutely,hourly";               //{41.443423},{-81.775168}
 

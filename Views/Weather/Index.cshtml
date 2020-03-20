@@ -1,5 +1,8 @@
 @model weatherMvc.Models.WeatherData
-
+@{
+    var weatherData = (WeatherData)ViewData["weatherData"];
+    var locationData = (LocationData)ViewData["location"];
+}
 @{
     ViewData["Title"] = "Index";
 }

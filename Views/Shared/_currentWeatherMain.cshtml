@@ -1,33 +1,47 @@
+@model weatherMvc.Models.WeatherData
+@{
+    var weatherData = (WeatherData)ViewData["weatherData"];
+    var locationData = (LocationData)ViewData["location"];
+}
 <div class="row">
     <div class="col-md-2">
         <img src="~/images/32.png" />
     </div>
     <div class="col-md-3">
-        <h2>@Model.currently.temperature F</h2>
+        <h2>@weatherData.currently.temperature F</h2>
     </div>
     <div class="col-md-3">
-        <h2>High: @Model.daily.data[0].temperatureHigh</h2>
+        <h2>High: @weatherData.daily.data[0].temperatureHigh</h2>
     </div>
     <div class="col-md-3">
-        <h2>Low: @Model.daily.data[0].temperatureLow</h2>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3">
-        <h2>@Model.currently.summary</h2>
-    </div>
-    <div class="col-md-3">
-        <span>There is a @Model.currently.precipProbability% chance of @Model.currently.precipType </span>
+        <h2>Low: @weatherData.daily.data[0].temperatureLow</h2>
     </div>
 </div>
 <div class="row">
     <div class="col-md-3">
+        <h2>@weatherData.currently.summary</h2>
+    </div>
+    <div class="col-md-3">
+        <span>There is a @weatherData.currently.precipProbability% chance of @weatherData.currently.precipType </span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md">
         <h2>This is your address from Google:</h2>
-        <h2>@Model.location.results[0].formatted_address</h2>
+        <h2>@locationData.results[0].formatted_address</h2>
+        <h2>Coordinates:</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md">
+        <h2>Latitude: @locationData.results[0].geometry.location.lat</h2>
+        <h2>Longitude: @locationData.results[0].geometry.location.lng</h2>
     </div>
 </div>
 
-@foreach(var day in @Model.daily.data)
+@*
+<!--
+@foreach(var day in @weatherData.daily.data)
 {
     <div class="row">
         <div class="col-md-2">
@@ -40,3 +54,5 @@
         </div>
     </div>
 }
+-->
+*@
