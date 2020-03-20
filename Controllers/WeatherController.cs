@@ -46,17 +46,19 @@ namespace weatherMvc.Controllers
         {
             WeatherData ViewModel = new WeatherData();
 
-            LocationData location = new LocationData();
-
             if(rawAddress.Length > 0)
             {
                 LocationData geocode = GetLocationFromGoogle(rawAddress).Result;
                 longitude = geocode.results[0].geometry.location.lng;
-                latitude = geocode.results[0].geometry.location.lat;
+                latitude =  geocode.results[0].geometry.location.lat;
+                ViewModel.location.results[0] = geocode.results[0];
+                
             }
             
             
             WeatherData response = await CallDarkSky(longitude, latitude);
+            
+            response.location.results[0] = geocode.results[0];
 
             if (response != null)
             {
@@ -64,9 +66,7 @@ namespace weatherMvc.Controllers
                 ViewModel.daily = response.daily;
                 ViewModel.flags = response.flags;
                 ViewModel.hourly = response.hourly;
-                ViewModel.location = response.location;
-                ViewModel.daily.data = response.daily.data;
-                
+                ViewModel.daily.data = response.daily.data;                
             }
 
             return View(ViewModel);

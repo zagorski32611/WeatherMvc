@@ -20,6 +20,12 @@
         <span>There is a @Model.currently.precipProbability% chance of @Model.currently.precipType </span>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-3">
+        <h2>This is your address from Google:</h2>
+        <h2>@Model.location.results[0].formatted_address</h2>
+    </div>
+</div>
 
 @foreach(var day in @Model.daily.data)
 {
