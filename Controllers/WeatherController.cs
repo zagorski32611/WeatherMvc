@@ -11,6 +11,7 @@ using weatherMvc.Data;
 using weatherMvc.Models;
 using System.Text.RegularExpressions;
 
+
 namespace weatherMvc.Controllers
 {
     public class WeatherController : Controller
@@ -42,35 +43,39 @@ namespace weatherMvc.Controllers
             }
         }
 
-        public IActionResult Index(double longitude = 0, double latitude = 0, string rawAddress = "")
+        public IActionResult Index(double longitude, double latitude, string rawAddress = "")
         {
             ViewData["weatherData"] = new WeatherData();
             ViewData["location"] = new LocationData();
 
-            if (rawAddress.Length > 0)
+            if (rawAddress.Length == 0)
+            {
+                // reverse geocode method
+                // then geocode = GoogleGeoCode_Reverse(lat,long);
+                WeatherData weather = CallDarkSky(longitude, latitude).Result;
+                ViewData["weatherData"] = weather;
+                return View();
+            }
+            else
             {
                 LocationData geocode = GetLocationFromGoogle(rawAddress).Result;
                 ViewData["location"] = geocode;
 
-                if (!(geocode is null))
+                if (geocode is null)
+                {
+                    return View("error");
+                }
+                else
                 {
                     double result_lat = geocode.results[0].geometry.location.lat;
                     double result_lng = geocode.results[0].geometry.location.lng;
 
                     WeatherData weather = CallDarkSky(result_lng, result_lat).Result;
+
                     ViewData["weatherData"] = weather;
+
                     return View();
                 }
-                else
-                {
-                    return View("error");
-                }
-            }
-            else
-            {
-                WeatherData weather = CallDarkSky(longitude, latitude).Result;
-                ViewData["weatherData"] = weather;
-                return View();
             }
         }
 
