@@ -19,6 +19,7 @@ namespace weatherMvc.Models
         public Daily daily { get; set; }
         public List<Alert> alerts { get; set; }
         public Flags flags { get; set; }
+        public LocationData location { get; set; }
     }
     public class Currently
     {
@@ -213,11 +214,13 @@ namespace weatherMvc.Models
 
         [JsonPropertyName("daily.data.uvIndex")]
         public int uvIndex { get; set; }
+
         [JsonPropertyName("daily.data.uvIndexTime")]
         public long uvIndexTime { get; set; }
 
         [JsonPropertyName("daily.data.visibility")]
         public double visibility { get; set; }
+
         [JsonPropertyName("daily.data.ozone")]
         public double ozone { get; set; }
         [JsonPropertyName("daily.data.temperatureMin")]
@@ -276,28 +279,111 @@ namespace weatherMvc.Models
     {
         [Key]
         public int locationDataId { get; set; }
-        public List<AddressComponents> address_components { get; set; }
-        public string formatted_address { get; set; }
+
+        public List<Result> results { get; set; }
+
         public string status { get; set; }
-        public double location_lat { get; set; }
-        public double location_long { get; set; }
-        public string google_place_id { get; set; }
+
+        public string searchAddress {get; set;}
+
+        public double searchLat {get; set; }
+
+        public double searchLng {get; set; }
     }
 
-    public class AddressComponents
+    [JsonConverter(typeof(Result))]
+    public class Result
+    {
+        [JsonPropertyName("results.formatted_address")]
+        public string formatted_address { get; set; }
+
+        [JsonPropertyName("results.place_id")]
+        public string place_id { get; set; }
+
+        [JsonPropertyName("results.address_components")]
+        public List<AddressComponent> address_components { get; set; }
+
+        [JsonPropertyName("results.geometry")]
+        public Geometry geometry { get; set; }
+
+        [JsonPropertyName("results.types")]
+        public List<string> types { get; set; }
+    }
+
+    public class AddressComponent
     {
         [Key]
-        public int addressComponentsId { get; set; }
-        public string street_number { get; set; }
-        public string route { get; set; } // street
-        public string locality { get; set; } // city
-        public string county { get; set; } // google calls this: administrative_area_level_2
-        public string state { get; set; }
-        public string country { get; set; }
-        public string postal_code { get; set; }
-        public string postal_code_suffix { get; set; }
+        public int addressComponentId { get; set; }
+
+        [JsonPropertyName("results.address_components.long_name")]
+        public string long_name { get; set; }
+
+        [JsonPropertyName("results.address_components.short_name")]
+        public string short_name { get; set; }
+
+        [JsonPropertyName("results.address_components.types")]
+        public List<string> types { get; set; }
+    }
 
 
+
+    public class Geometry
+    {
+        [Key]
+        public int geometryId { get; set; }
+
+        [JsonPropertyName("results.geometry.location_type")]
+        public string location_type { get; set; }
+
+        [JsonPropertyName("results.geometry.bounds")]
+        public Bounds bounds { get; set; }
+
+        [JsonPropertyName("results.geometry.bounds")]
+        public Location location { get; set; }
+
+        [JsonPropertyName("results.geometry.viewport")]
+        public Viewport viewport { get; set; }
+    }
+
+
+
+    public class Location
+    {
+        [Key]
+        public int locationId { get; set; }
+
+        [JsonPropertyName("results.geometry.location.lat")]
+        public double lat { get; set; }
+
+        [JsonPropertyName("results.geometry.location.lng")]
+        public double lng { get; set; }
+    }
+
+
+    public class Viewport
+    {
+        public Northeast northeast { get; set; }
+        public Southwest southwest { get; set; }
+    }
+
+
+    public class Bounds
+    {
+        public Northeast northeast { get; set; }
+        public Southwest southwest { get; set; }
+    }
+
+
+    public class Northeast
+    {
+        public double lat { get; set; }
+        public double lng { get; set; }
+    }
+
+    public class Southwest
+    {
+        public double lat { get; set; }
+        public double lng { get; set; }
     }
 
 }

@@ -11,6 +11,7 @@ using weatherMvc.Data;
 using weatherMvc.Models;
 using System.Text.RegularExpressions;
 
+
 namespace weatherMvc.Controllers
 {
     public class WeatherController : Controller
@@ -34,7 +35,7 @@ namespace weatherMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Index", "weather", new { longitude = model.location_long, latitude = model.location_lat });
+                return RedirectToAction("Index", "weather", new { longitude = model.searchLng, latitude = model.searchLng, rawAddress = model.searchAddress });
             }
             else
             {
@@ -42,33 +43,46 @@ namespace weatherMvc.Controllers
             }
         }
 
-        public async Task<IActionResult> Index(double longitude, double latitude)
+        public IActionResult Index(double longitude, double latitude, string rawAddress = "")
         {
-            WeatherData ViewModel = new WeatherData();
+            ViewData["weatherData"] = new WeatherData();
+            ViewData["location"] = new LocationData();
 
-            WeatherData response = await CallDarkSky(longitude, latitude);
-
-            if (response != null)
+            if (rawAddress.Length == 0)
             {
-                ViewModel.currently = response.currently;
-                ViewModel.daily = response.daily;
-                ViewModel.flags = response.flags;
-                ViewModel.hourly = response.hourly;
-                ViewModel.daily.data = response.daily.data;
+                // reverse geocode method
+                // then geocode = GoogleGeoCode_Reverse(lat,long);
+                WeatherData weather = CallDarkSky(longitude, latitude).Result;
+                ViewData["weatherData"] = weather;
+                return View();
             }
+            else
+            {
+                LocationData geocode = GetLocationFromGoogle(rawAddress).Result;
+                ViewData["location"] = geocode;
 
-            return View(ViewModel);
+                if (geocode is null)
+                {
+                    return View("error");
+                }
+                else
+                {
+                    double result_lat = geocode.results[0].geometry.location.lat;
+                    double result_lng = geocode.results[0].geometry.location.lng;
+
+                    WeatherData weather = CallDarkSky(result_lng, result_lat).Result;
+
+                    ViewData["weatherData"] = weather;
+
+                    return View();
+                }
+            }
         }
-
 
         public async Task<WeatherData> CallDarkSky(double longitude, double latitude)
         {
             WeatherData weather_data = new WeatherData();
             HttpClient httpclient = new HttpClient();
-
-
-            //LocationData location = new LocationData();
-            //LocationData geocode = GetLocationFromGoogle("this").Result;
 
             string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{latitude},{longitude}?exclude=minutely,hourly";               //{41.443423},{-81.775168}
 
@@ -103,9 +117,11 @@ namespace weatherMvc.Controllers
             HttpClient httpClient = new HttpClient();
 
             // build request string:
+            string encodedAddress = System.Net.WebUtility.HtmlEncode(address);
+
 
             string baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?";
-            string cityLookup = $"address={address}&region=us&key=YOUR_API_KEY";
+            string cityLookup = $"address={address}&region=us&key=AIzaSyAvHBuqmay0q_5_k3YKBm0irl4b2FobR7s";
 
             try
             {
@@ -117,7 +133,7 @@ namespace weatherMvc.Controllers
 
                 location = deserializedLocation;
 
-                await _context.SaveChangesAsync();
+                //await _context.SaveChangesAsync();
 
                 return location;
             }
