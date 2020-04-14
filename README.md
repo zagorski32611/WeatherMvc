@@ -23,3 +23,7 @@ UI Upgrades
 This app will be deployed to an Azure App Service with a SQL Server database online.
 
 Possibly use some DevOps tools? Docker, Terraform (lots of work). Not sure yet. 
+
+
+# Notes
+It's important to note that DarkSky was bought by Apple recently and is planning to shut down their API in 2021. I'm looking into other sources for this app (probably the National Weather Service).
