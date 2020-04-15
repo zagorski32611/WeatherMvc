@@ -1,5 +1,5 @@
 {
-  "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/weatherMvc.csproj",
+  "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\weatherMvc.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20521,88 +20521,88 @@
   "RootNamespace": "weatherMvc",
   "Documents": [
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/Delete.cshtml",
-      "TargetPath": "Views\\Weather\\Delete.cshtml",
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Shared/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/Create.cshtml",
-      "TargetPath": "Views\\Weather\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Shared/_LoginPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Shared/_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Shared/_currentWeatherMain.cshtml",
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Shared\\_currentWeatherMain.cshtml",
       "TargetPath": "Views\\Shared\\_currentWeatherMain.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/Index.cshtml",
-      "TargetPath": "Views\\Weather\\Index.cshtml",
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Weather\\Delete.cshtml",
+      "TargetPath": "Views\\Weather\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Areas/Identity/Pages/_ViewStart.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Home/Index.cshtml",
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/Edit.cshtml",
-      "TargetPath": "Views\\Weather\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/Details.cshtml",
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Weather\\Details.cshtml",
       "TargetPath": "Views\\Weather\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Weather\\Edit.cshtml",
+      "TargetPath": "Views\\Weather\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Shared/_WeatherDetails.cshtml",
-      "TargetPath": "Views\\Shared\\_WeatherDetails.cshtml",
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/setLocation.cshtml",
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Weather\\setLocation.cshtml",
       "TargetPath": "Views\\Weather\\setLocation.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Shared/Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Weather\\Index.cshtml",
+      "TargetPath": "Views\\Weather\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Shared\\_WeatherDetails.cshtml",
+      "TargetPath": "Views\\Shared\\_WeatherDetails.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Weather\\Create.cshtml",
+      "TargetPath": "Views\\Weather\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
     }
   ],
