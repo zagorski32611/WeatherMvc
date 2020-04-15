@@ -14,7 +14,7 @@ using System.Text.RegularExpressions;
 
 namespace weatherMvc.Controllers
 {
-    public class WeatherController : Controller
+    public partial class WeatherController : Controller
     {
         private readonly WeatherMvcDbContext _context;
 
