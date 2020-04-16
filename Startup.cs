@@ -60,15 +60,15 @@ namespace weatherMvc
             options.User.RequireUniqueEmail = false;
         });
 
-        services.ConfigureApplicationCookie(options =>
-        {
-            // Cookie settings
-            options.Cookie.HttpOnly = true;
-            options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-            options.LoginPath = "/Identity/Account/Login";
-            options.AccessDeniedPath = "/Identity/Account/AccessDenied";
-            options.SlidingExpiration = true;
-        });
+            services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+                options.LoginPath = "/Identity/Account/Login";
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                options.SlidingExpiration = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -98,9 +98,20 @@ namespace weatherMvc
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapRazorPages();
             });
-            
+
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "weartherreports",
+                    pattern: "{controller=WeatherReports}/{action=Index}/{id?}");
+
+                endpoints.MapRazorPages();
+            });
+
         }
     }
 }

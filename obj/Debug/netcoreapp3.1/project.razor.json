@@ -20581,6 +20581,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\WeatherReports\\Index.cshtml",
+      "TargetPath": "Views\\WeatherReports\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\jzagorski\\Documents\\_CodeFiles\\WeatherMvc\\Views\\Weather\\Create.cshtml",
       "TargetPath": "Views\\Weather\\Create.cshtml",
       "FileKind": "mvc"
