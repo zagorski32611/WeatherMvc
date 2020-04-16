@@ -284,11 +284,11 @@ namespace weatherMvc.Models
 
         public string status { get; set; }
 
-        public string searchAddress {get; set;}
+        public string searchAddress { get; set; }
 
-        public double searchLat {get; set; }
+        public double searchLat { get; set; }
 
-        public double searchLng {get; set; }
+        public double searchLng { get; set; }
     }
 
     [JsonConverter(typeof(Result))]
@@ -321,11 +321,7 @@ namespace weatherMvc.Models
         [JsonPropertyName("results.address_components.short_name")]
         public string short_name { get; set; }
 
-        [JsonPropertyName("results.address_components.types")]
-        public List<string> types { get; set; }
     }
-
-
 
     public class Geometry
     {
