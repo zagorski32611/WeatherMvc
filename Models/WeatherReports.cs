@@ -5,5 +5,8 @@ using System.Text.Json.Serialization;
 
 namespace weatherMvc.Models
 {
+    public class WeatherReport : WeatherData
+    {
 
+    }
 }
