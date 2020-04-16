@@ -11,7 +11,7 @@ The JSON results from Google contain the coordinates of the user's address (alon
 In the same method, the app uses those coordinates to call DarkSky's weather API for current weather information and the 7 day forcast.
 The application saves the Geocoding and Weather results in a SQL Server Express database. 
 
-# Future State - Application
+# Furture State - Application
 
 Eventually, the user will have the following:
 Reporting - pre written reports with customizable parameters. 
@@ -23,16 +23,3 @@ UI Upgrades
 This app will be deployed to an Azure App Service with a SQL Server database online.
 
 Possibly use some DevOps tools? Docker, Terraform (lots of work). Not sure yet. 
-
-
-# Notes
-It's important to note that DarkSky was bought by Apple recently and is planning to shut down their API in 2021. I'm looking into other sources for this app (probably the National Weather Service).
-
-
-
-
-
-
-# Interesting Technical Issues:
-
-
