@@ -123,8 +123,8 @@ namespace weatherMvc.Controllers
             // build request string:
             string encodedAddress = System.Net.WebUtility.HtmlEncode(address);
 
-
             string baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?";
+
             string cityLookup = $"address={address}&region=us&key=AIzaSyAvHBuqmay0q_5_k3YKBm0irl4b2FobR7s";
 
             try

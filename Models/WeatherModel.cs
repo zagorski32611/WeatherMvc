@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 
 namespace weatherMvc.Models
 {
@@ -306,6 +308,7 @@ namespace weatherMvc.Models
         [JsonPropertyName("results.geometry")]
         public Geometry geometry { get; set; }
 
+        [NotMapped]
         [JsonPropertyName("results.types")]
         public string[] types { get; set; }
     }
