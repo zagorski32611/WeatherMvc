@@ -96,10 +96,14 @@ namespace weatherMvc.Controllers
                 WeatherData deserializedWeather = JsonConvert.DeserializeObject<WeatherData>(responseBody);
 
                 weather_data = deserializedWeather;
+                
+                // save raw json to GeneralRequestResponse
+                //_context.Add(Content(responseBody, "application/json")); // doesn't work
+                
+                // there should be a seperate method that handles saving to the db.
+                _context.Add(weather_data);
 
-                //_context.Add(weather_data);
-
-                //await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
                 return weather_data;
             }
@@ -133,7 +137,7 @@ namespace weatherMvc.Controllers
 
                 location = deserializedLocation;
 
-                //await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
                 return location;
             }

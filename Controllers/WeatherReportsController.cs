@@ -35,7 +35,7 @@ namespace weatherMvc.Controllers
         }
 
         [HttpPost]
-        public IActionResult sortDays(WeatherReport weather)
+        public IActionResult sortDays(WeatherReport weatherReport)
         {
             var listofDays = _context.DailyData
                             .Where(d => d.temperatureMax > 30)

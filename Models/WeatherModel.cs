@@ -307,7 +307,7 @@ namespace weatherMvc.Models
         public Geometry geometry { get; set; }
 
         [JsonPropertyName("results.types")]
-        public List<string> types { get; set; }
+        public string[] types { get; set; }
     }
 
     public class AddressComponent
