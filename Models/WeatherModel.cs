@@ -296,6 +296,9 @@ namespace weatherMvc.Models
     [JsonConverter(typeof(Result))]
     public class Result
     {
+        [Key]
+        public int resultId { get; set; }
+        
         [JsonPropertyName("results.formatted_address")]
         public string formatted_address { get; set; }
 
@@ -308,9 +311,16 @@ namespace weatherMvc.Models
         [JsonPropertyName("results.geometry")]
         public Geometry geometry { get; set; }
 
-        [NotMapped]
         [JsonPropertyName("results.types")]
-        public string[] types { get; set; }
+        public List<ResultTypes> types { get; set; }
+    }
+
+    public class ResultTypes
+    {
+        [Key]
+        public int resultTypeId { get; set; }
+
+        public string result { get; set; }
     }
 
     public class AddressComponent
@@ -361,6 +371,8 @@ namespace weatherMvc.Models
 
     public class Viewport
     {
+        [Key]
+        public int viewportId { get; set; }
         public Northeast northeast { get; set; }
         public Southwest southwest { get; set; }
     }
@@ -368,6 +380,8 @@ namespace weatherMvc.Models
 
     public class Bounds
     {
+        [Key]
+        public int boundsId { get; set; }
         public Northeast northeast { get; set; }
         public Southwest southwest { get; set; }
     }
@@ -375,12 +389,16 @@ namespace weatherMvc.Models
 
     public class Northeast
     {
+        [Key]
+        public int northEastId { get; set; }
         public double lat { get; set; }
         public double lng { get; set; }
     }
 
     public class Southwest
     {
+        [Key]
+        public int southWestId { get; set; }
         public double lat { get; set; }
         public double lng { get; set; }
     }
