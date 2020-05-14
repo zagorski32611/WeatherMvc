@@ -10,17 +10,21 @@ using Newtonsoft.Json;
 using weatherMvc.Data;
 using weatherMvc.Models;
 using System.Text.RegularExpressions;
-
+using weatherMvc.Interfaces;
+using SQLitePCL;
 
 namespace weatherMvc.Controllers
 {
-    public partial class WeatherController : Controller
+    public partial class WeatherController : Controller, ILocationService
     {
         private readonly WeatherMvcDbContext _context;
+
+        private readonly ILocationService _location;
 
         public WeatherController(WeatherMvcDbContext context)
         {
             _context = context;
+           
         }
 
 
@@ -58,7 +62,8 @@ namespace weatherMvc.Controllers
             }
             else
             {
-                LocationData geocode = GetLocationFromGoogle(rawAddress).Result;
+                LocationData geocode = _location.LocationSearch(rawAddress).Result;
+
                 ViewData["location"] = geocode;
 
                 if (geocode is null)
@@ -84,7 +89,8 @@ namespace weatherMvc.Controllers
             WeatherData weather_data = new WeatherData();
             HttpClient httpclient = new HttpClient();
 
-            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{latitude},{longitude}?exclude=minutely,hourly";               //{41.443423},{-81.775168}
+            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{latitude},{longitude}?exclude=minutely,hourly";
+            // 41.443423,-81.775168
 
             try
             {
@@ -97,9 +103,9 @@ namespace weatherMvc.Controllers
 
                 weather_data = deserializedWeather;
 
-                //_context.Add(weather_data);
+                _context.Add(weather_data);
 
-                //await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
                 return weather_data;
             }
@@ -111,38 +117,8 @@ namespace weatherMvc.Controllers
             }
         }
 
-        public async Task<LocationData> GetLocationFromGoogle(string address)
-        {
-            LocationData location = new LocationData();
-            HttpClient httpClient = new HttpClient();
+       
 
-            // build request string:
-            string encodedAddress = System.Net.WebUtility.HtmlEncode(address);
-
-
-            string baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?";
-            string cityLookup = $"address={address}&region=us&key=AIzaSyAvHBuqmay0q_5_k3YKBm0irl4b2FobR7s";
-
-            try
-            {
-                HttpResponseMessage response = await httpClient.GetAsync($"{baseUrl + cityLookup}");
-                response.EnsureSuccessStatusCode();
-
-                string responseBody = await response.Content.ReadAsStringAsync();
-                LocationData deserializedLocation = JsonConvert.DeserializeObject<LocationData>(responseBody);
-
-                location = deserializedLocation;
-
-                //await _context.SaveChangesAsync();
-
-                return location;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Cannot reach google because {e}");
-                return location;
-            }
-        }
 
         public static DateTime GetDateTime(long unixTimeStamp)
         {
@@ -152,6 +128,16 @@ namespace weatherMvc.Controllers
 
             DateTime dateTime = new DateTime(ticks: unixStart.Ticks + unixTimeStampInTicks, kind: System.DateTimeKind.Utc);
             return dateTime.ToLocalTime();
+        }
+
+        Task<LocationData> ILocationService.LocationSearch(string searchAddress)
+        {
+            return _location.LocationSearch(searchAddress);
+        }
+
+        public void SaveLocationData(LocationData location)
+        {
+            _location.SaveLocationData(location);
         }
     }
 }

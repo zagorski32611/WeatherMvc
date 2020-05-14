@@ -502,3 +502,4 @@ C:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\stati
 C:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\weatherMvc.dll
 C:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\weatherMvc.pdb
 C:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\weatherMvc.genruntimeconfig.cache
+C:\Users\jzagorski\Documents\_CodeFiles\WeatherMvc\obj\Debug\netcoreapp3.1\Razor\Views\WeatherReports\Index.cshtml.g.cs
