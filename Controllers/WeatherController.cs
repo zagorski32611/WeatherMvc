@@ -24,9 +24,17 @@ namespace weatherMvc.Controllers
         public WeatherController(WeatherMvcDbContext context)
         {
             _context = context;
-           
         }
 
+        Task<LocationData> ILocationService.LocationSearch(string searchAddress)
+        {
+            return _location.LocationSearch(searchAddress);
+        }
+
+        public void SaveLocationData(LocationData location)
+        {
+            _location.SaveLocationData(location);
+        }
 
         public IActionResult setLocation()
         {
@@ -54,8 +62,6 @@ namespace weatherMvc.Controllers
 
             if (rawAddress.Length == 0)
             {
-                // reverse geocode method
-                // then geocode = GoogleGeoCode_Reverse(lat,long);
                 WeatherData weather = CallDarkSky(longitude, latitude).Result;
                 ViewData["weatherData"] = weather;
                 return View();
@@ -130,16 +136,6 @@ namespace weatherMvc.Controllers
 
             DateTime dateTime = new DateTime(ticks: unixStart.Ticks + unixTimeStampInTicks, kind: System.DateTimeKind.Utc);
             return dateTime.ToLocalTime();
-        }
-
-        Task<LocationData> ILocationService.LocationSearch(string searchAddress)
-        {
-            return _location.LocationSearch(searchAddress);
-        }
-
-        public void SaveLocationData(LocationData location)
-        {
-            _location.SaveLocationData(location);
         }
     }
 }
