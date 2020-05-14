@@ -13,6 +13,17 @@ The application saves the Geocoding and Weather results in a SQL Server Express 
 
 # Furture State - Application
 
+Currently, this application uses controller methods to make API calls to Google and Dark Sky, save data to the database and send data to the view. In the current refactor, I will use Dependency Injection to create three services:
+1. Location Service (ILocationService)
+2. Weather Service (IWeatherService)
+3. Save To DB Services (ISaveDb)
+
+This will will seperate business logic from the controllers and (hopefully) make debugging specific calls easier.
+
+Branches for Each Change: 
+Location Service: Location_service
+
+
 Eventually, the user will have the following:
 Reporting - pre written reports with customizable parameters. 
 Past Forecasts - possibly integrate with DarkSky's "time machine" api. 
