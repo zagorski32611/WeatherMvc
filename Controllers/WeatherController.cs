@@ -23,7 +23,7 @@ namespace weatherMvc.Controllers
 
         public WeatherController(WeatherMvcDbContext context)
         {
-            _context = context;
+            _context = context; 
         }
 
         Task<LocationData> ILocationService.LocationSearch(string searchAddress)
