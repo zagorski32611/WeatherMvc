@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace weatherMvc.Models
@@ -255,8 +256,8 @@ namespace weatherMvc.Models
         public string title { get; set; }
         public List<AlertRegion> alert_regions { get; set; }
         public string severity { get; set; }
-        public DateTime time { get; set; }
-        public DateTime expires { get; set; }
+        public long time { get; set; }
+        public long expires { get; set; }
         public string description { get; set; }
         public string uri { get; set; }
     }
@@ -284,16 +285,19 @@ namespace weatherMvc.Models
 
         public string status { get; set; }
 
-        public string searchAddress {get; set;}
+        public string searchAddress { get; set; }
 
-        public double searchLat {get; set; }
+        public double searchLat { get; set; }
 
-        public double searchLng {get; set; }
+        public double searchLng { get; set; }
     }
 
     [JsonConverter(typeof(Result))]
     public class Result
     {
+        [Key]
+        public int resultId { get; set; }
+        
         [JsonPropertyName("results.formatted_address")]
         public string formatted_address { get; set; }
 
@@ -306,7 +310,7 @@ namespace weatherMvc.Models
         [JsonPropertyName("results.geometry")]
         public Geometry geometry { get; set; }
 
-        [JsonPropertyName("results.types")]
+        [NotMapped]
         public List<string> types { get; set; }
     }
 
@@ -321,7 +325,7 @@ namespace weatherMvc.Models
         [JsonPropertyName("results.address_components.short_name")]
         public string short_name { get; set; }
 
-        [JsonPropertyName("results.address_components.types")]
+        [NotMapped]
         public List<string> types { get; set; }
     }
 
@@ -362,6 +366,8 @@ namespace weatherMvc.Models
 
     public class Viewport
     {
+        [Key]
+        public int viewportId { get; set; }
         public Northeast northeast { get; set; }
         public Southwest southwest { get; set; }
     }
@@ -369,6 +375,8 @@ namespace weatherMvc.Models
 
     public class Bounds
     {
+        [Key]
+        public int boundsId { get; set; }
         public Northeast northeast { get; set; }
         public Southwest southwest { get; set; }
     }
@@ -376,12 +384,15 @@ namespace weatherMvc.Models
 
     public class Northeast
     {
+        [Key]
+        public int northeastId { get; set; }
         public double lat { get; set; }
         public double lng { get; set; }
     }
 
     public class Southwest
     {
+        [Key]
         public double lat { get; set; }
         public double lng { get; set; }
     }

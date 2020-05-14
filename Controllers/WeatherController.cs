@@ -9,18 +9,23 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using weatherMvc.Data;
 using weatherMvc.Models;
+using weatherMvc.Services;
+using weatherMvc.Interfaces;
 using System.Text.RegularExpressions;
 
 
 namespace weatherMvc.Controllers
 {
-    public class WeatherController : Controller
+    public partial class WeatherController : Controller
     {
         private readonly WeatherMvcDbContext _context;
 
-        public WeatherController(WeatherMvcDbContext context)
+        IRequestResponse _rAndr;
+
+        public WeatherController(WeatherMvcDbContext context, IRequestResponse rAndr)
         {
             _context = context;
+            _rAndr = rAndr;
         }
 
 
@@ -97,9 +102,12 @@ namespace weatherMvc.Controllers
 
                 weather_data = deserializedWeather;
 
-                //_context.Add(weather_data);
-
-                //await _context.SaveChangesAsync();
+                requestAndResponseVerification requestAndResponseVerification = _rAndr.takeRequestResponseSnapshot(request_string: response.RequestMessage.RequestUri.ToString(), response_string: responseBody.ToString(), time_stamp: DateTime.Now,
+                                                    target_uri: httpclient.BaseAddress.ToString(), http_status_code: response.StatusCode.ToString());
+                if(requestAndResponseVerification.save_success_flag == true)
+                {
+                    Console.WriteLine("it worked!");
+                }
 
                 return weather_data;
             }
@@ -133,7 +141,8 @@ namespace weatherMvc.Controllers
 
                 location = deserializedLocation;
 
-                //await _context.SaveChangesAsync();
+                _rAndr.takeRequestResponseSnapshot(request_string: $"{baseUrl + cityLookup}", response_string: responseBody.ToString(), time_stamp: DateTime.Now,
+                                                    target_uri: $"{baseUrl + cityLookup}", http_status_code: response.StatusCode.ToString());
 
                 return location;
             }

@@ -38,6 +38,6 @@ namespace weatherMvc.Data
         public DbSet<AlertRegion> AlertRegions { get; set; }
 
         public DbSet<LocationData> LocationData { get; set; }
-
+        public DbSet<requestAndResponse> requestAndResponse { get; internal set; }
     }
 }

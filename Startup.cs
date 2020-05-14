@@ -12,7 +12,8 @@ using weatherMvc.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using weatherMvc.Services;
+using weatherMvc.Interfaces;
 
 namespace weatherMvc
 {
@@ -39,6 +40,11 @@ namespace weatherMvc
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            
+            services.AddScoped<IRequestResponse, RequestResponseService>(); 
+
+
+
             services.Configure<IdentityOptions>(options =>
         {
             // Password settings.

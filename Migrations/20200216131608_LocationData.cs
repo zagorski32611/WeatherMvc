@@ -19,6 +19,7 @@ namespace weatherMvc.Migrations
                     locationCountry = table.Column<string>(nullable: true),
                     locationZipCode = table.Column<string>(nullable: true),
                     locationTimeZone = table.Column<System.DateTimeOffset>(nullable: true)
+                    
                 },
                 constraints: table =>
                 {
