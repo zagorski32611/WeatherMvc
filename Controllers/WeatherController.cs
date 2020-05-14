@@ -62,7 +62,9 @@ namespace weatherMvc.Controllers
             }
             else
             {
+                // use LocationService to get location data and save the location object:
                 LocationData geocode = _location.LocationSearch(rawAddress).Result;
+                _location.SaveLocationData(geocode);
 
                 ViewData["location"] = geocode;
 
