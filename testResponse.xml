@@ -1,0 +1,1438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <ImportForQuote_SyncResponse xmlns="http://www.banyantechnology.com/Services/ConnectivityPlatform/">
+      <ImportForQuote_SyncResult>
+        <Load>
+          <Loadinfo>
+            <LoadID>29042825</LoadID>
+            <ManifestID />
+            <BOLNumber>USLG04565</BOLNumber>
+            <CustomerPO />
+            <InvoiceID />
+            <BillingID />
+            <IncoTermID xsi:nil="true" />
+            <UltimateDestinationCountryCode />
+            <EstimatedDeliveryDate>0001-01-01T00:00:00</EstimatedDeliveryDate>
+            <EstimatedPickupDate>0001-01-01T00:00:00</EstimatedPickupDate>
+            <ActualPickupDate>0001-01-01T00:00:00</ActualPickupDate>
+            <ActualDeliveryDate>0001-01-01T00:00:00</ActualDeliveryDate>
+          </Loadinfo>
+          <BillTo>
+            <Name>XPO Logistics, Inc.</Name>
+            <Note />
+            <ShipType>ThirdParty</ShipType>
+            <PayType>Prepaid</PayType>
+            <UseDefaultBillTo>true</UseDefaultBillTo>
+            <AddressInfo>
+              <Address1>13777 Ballantyne Corp. Pl</Address1>
+              <Address2 />
+              <City>Charlotte</City>
+              <CountryCode>United States</CountryCode>
+              <State>NC</State>
+              <Zipcode>28277</Zipcode>
+              <LocationName>XPO Logistics</LocationName>
+            </AddressInfo>
+            <ContactInfo>
+              <FirstName />
+              <LastName />
+              <ContactName />
+              <Phone>855-744-7976</Phone>
+              <PhoneExt />
+              <Fax />
+              <Email>LTLTeam@xpo.com</Email>
+            </ContactInfo>
+            <UseDefaultShipType>false</UseDefaultShipType>
+            <UseDefaultPayType>false</UseDefaultPayType>
+          </BillTo>
+          <RateServices>
+            <RateServices>
+              <ServiceCode>LTL</ServiceCode>
+              <ShippingQty>1</ShippingQty>
+              <PackageType>Pallets</PackageType>
+              <EquipmentType>VanTrailer_Standard</EquipmentType>
+              <AdditionalWeight>0</AdditionalWeight>
+              <SpecialInstructions>Don't break</SpecialInstructions>
+              <Length xsi:nil="true" />
+              <Width xsi:nil="true" />
+              <Height xsi:nil="true" />
+              <WeightUom>LBS</WeightUom>
+              <SizeUom>IN</SizeUom>
+            </RateServices>
+          </RateServices>
+          <Shipper>
+            <ContactInfo>
+              <FirstName>Joey</FirstName>
+              <LastName>Fingers</LastName>
+              <ContactName>Joey Fingers</ContactName>
+              <Phone>216-555-11234</Phone>
+              <PhoneExt />
+              <Fax />
+              <Email>fingers@example.com</Email>
+            </ContactInfo>
+            <AddressInfo>
+              <Address1>123 Main St</Address1>
+              <Address2 />
+              <City>Cleveland</City>
+              <CountryCode>United States</CountryCode>
+              <State>OH</State>
+              <Zipcode>44135</Zipcode>
+              <LocationName>Main Dock</LocationName>
+            </AddressInfo>
+            <CompanyName>Test Shipper</CompanyName>
+            <Note />
+            <CompanyID />
+            <VendorID />
+            <Dock>
+              <Name>Main Dock</Name>
+              <Note />
+              <OpenTime>2018-10-08T06:00:00</OpenTime>
+              <ShipmentDateTime>2018-10-08T11:00:00</ShipmentDateTime>
+              <CloseTime>2018-10-08T18:00:00</CloseTime>
+              <ConfirmationNumber>Shipper/Dock/ConfirmationNumber</ConfirmationNumber>
+              <FCFS>false</FCFS>
+            </Dock>
+          </Shipper>
+          <Consignee>
+            <ContactInfo>
+              <FirstName>Mike</FirstName>
+              <LastName>Jones</LastName>
+              <ContactName>Mike Jones</ContactName>
+              <Phone>614-555-1234</Phone>
+              <PhoneExt />
+              <Fax />
+              <Email>Mike@example.com</Email>
+            </ContactInfo>
+            <AddressInfo>
+              <Address1>1234 Test Road</Address1>
+              <Address2 />
+              <City>Columbus</City>
+              <CountryCode>United States</CountryCode>
+              <State>OH</State>
+              <Zipcode>43085</Zipcode>
+              <LocationName>Main Warehouse</LocationName>
+            </AddressInfo>
+            <CompanyName>Test Consignee</CompanyName>
+            <Note />
+            <CompanyID />
+            <VendorID />
+            <Dock>
+              <Name>Main Dock</Name>
+              <Note />
+              <OpenTime>2018-10-08T01:00:00</OpenTime>
+              <ShipmentDateTime>2018-10-08T13:00:00</ShipmentDateTime>
+              <CloseTime>2018-10-08T05:00:00</CloseTime>
+              <ConfirmationNumber>Consignee/Dock/ConfirmationNumber</ConfirmationNumber>
+              <FCFS>false</FCFS>
+            </Dock>
+          </Consignee>
+          <PackageInfo>
+            <CODAmount>0</CODAmount>
+            <DeclaredLiability>0</DeclaredLiability>
+            <RouteNumber />
+          </PackageInfo>
+          <Products>
+            <Product>
+              <Quantity>1</Quantity>
+              <PackageType>Boxes</PackageType>
+              <Weight>500</Weight>
+              <Class>c50</Class>
+              <NMFC>9876</NMFC>
+              <SKU />
+              <IsHazmat>false</IsHazmat>
+              <HazmatPhoneNumber />
+              <HazmatPhoneExt />
+              <Description>Coffee -SORT1</Description>
+              <Length>48</Length>
+              <Width>48</Width>
+              <Height>60</Height>
+              <UOM>English</UOM>
+              <SortOrder>1</SortOrder>
+              <ReferenceNumber />
+              <ParcelOptions>
+                <DeliveryConfirmation>None</DeliveryConfirmation>
+                <COD>None</COD>
+                <CODAmount>0</CODAmount>
+                <AdditionalHandling>false</AdditionalHandling>
+                <LargePackage>false</LargePackage>
+                <DeclaredValue>0</DeclaredValue>
+                <UnitValue xsi:nil="true" />
+                <UnitWeight xsi:nil="true" />
+              </ParcelOptions>
+              <UnNumber />
+              <HazMatShippingName />
+              <HazMatPkgGroup />
+              <HazMatClass />
+              <InternationalOptions />
+              <HazMatContact />
+              <HazMatPoison>false</HazMatPoison>
+            </Product>
+            <Product>
+              <Quantity>2</Quantity>
+              <PackageType>Boxes</PackageType>
+              <Weight>2500</Weight>
+              <Class>c50</Class>
+              <NMFC>9876</NMFC>
+              <SKU />
+              <IsHazmat>false</IsHazmat>
+              <HazmatPhoneNumber />
+              <HazmatPhoneExt />
+              <Description>Boomerangs -SORT2</Description>
+              <Length>48</Length>
+              <Width>48</Width>
+              <Height>60</Height>
+              <UOM>English</UOM>
+              <SortOrder>2</SortOrder>
+              <ReferenceNumber />
+              <ParcelOptions>
+                <DeliveryConfirmation>None</DeliveryConfirmation>
+                <COD>None</COD>
+                <CODAmount>0</CODAmount>
+                <AdditionalHandling>false</AdditionalHandling>
+                <LargePackage>false</LargePackage>
+                <DeclaredValue>0</DeclaredValue>
+                <UnitValue xsi:nil="true" />
+                <UnitWeight xsi:nil="true" />
+              </ParcelOptions>
+              <UnNumber />
+              <HazMatShippingName />
+              <HazMatPkgGroup />
+              <HazMatClass />
+              <InternationalOptions />
+              <HazMatContact />
+              <HazMatPoison>false</HazMatPoison>
+            </Product>
+          </Products>
+          <ShipperAccessorials>
+            <AppointmentRequired>false</AppointmentRequired>
+            <InsidePickup>false</InsidePickup>
+            <SortSegregate>false</SortSegregate>
+            <PalletJack>false</PalletJack>
+            <ResidentialPickup>true</ResidentialPickup>
+            <LiftgatePickup>false</LiftgatePickup>
+            <MarkingTagging>false</MarkingTagging>
+            <TradeShowPickup>false</TradeShowPickup>
+            <NYCMetro>false</NYCMetro>
+            <NonBusinessHourPickup>false</NonBusinessHourPickup>
+            <LimitedAccessType />
+          </ShipperAccessorials>
+          <ConsigneeAccessorials>
+            <AppointmentRequired>false</AppointmentRequired>
+            <InsideDelivery>false</InsideDelivery>
+            <SortSegregate>false</SortSegregate>
+            <PalletJack>false</PalletJack>
+            <ResidentialDelivery>false</ResidentialDelivery>
+            <LiftgateDelivery>false</LiftgateDelivery>
+            <MarkingTagging>false</MarkingTagging>
+            <TradeShowDelivery>false</TradeShowDelivery>
+            <NYCMetro>false</NYCMetro>
+            <DeliveryNotification>false</DeliveryNotification>
+            <TwoHourSpecialDelivery>false</TwoHourSpecialDelivery>
+            <NonBusinessHourDelivery>false</NonBusinessHourDelivery>
+          </ConsigneeAccessorials>
+          <LoadAccessorials>
+            <Guaranteed>false</Guaranteed>
+            <TimeDefinite>false</TimeDefinite>
+            <Expedited>false</Expedited>
+            <HolidayPickup>false</HolidayPickup>
+            <HolidayDelivery>false</HolidayDelivery>
+            <WeightDetermination>false</WeightDetermination>
+            <BlindShipment>false</BlindShipment>
+            <BlanketService>false</BlanketService>
+            <ProtectFromFreezing>false</ProtectFromFreezing>
+            <SingleShipment>false</SingleShipment>
+            <CustomsInBond>false</CustomsInBond>
+            <OverDimension>false</OverDimension>
+            <Stackable>false</Stackable>
+            <Turnkey>false</Turnkey>
+            <FoodGradeProducts>false</FoodGradeProducts>
+            <TSA>false</TSA>
+            <Bulkhead>false</Bulkhead>
+            <SignatureRequired>false</SignatureRequired>
+            <BlanketServiceChilled>false</BlanketServiceChilled>
+            <BlanketServiceFrozen>false</BlanketServiceFrozen>
+            <SaturdayDelivery>false</SaturdayDelivery>
+            <SecondMan>false</SecondMan>
+            <ReturnReceipt>false</ReturnReceipt>
+            <ShipmentHold>false</ShipmentHold>
+            <ProactiveResponse>false</ProactiveResponse>
+            <ShipperRelease>false</ShipperRelease>
+            <WhiteGlove>false</WhiteGlove>
+            <RestrictedDelivery>false</RestrictedDelivery>
+            <TankerEndorsedDriverRequired>false</TankerEndorsedDriverRequired>
+          </LoadAccessorials>
+          <UserDefined />
+          <ReferenceField>
+            <ReferenceField>
+              <Value>USLOBENJ</Value>
+              <Type>Client Reference ID</Type>
+              <PrintOnBOL>false</PrintOnBOL>
+              <PrintOnShippingLabel>false</PrintOnShippingLabel>
+            </ReferenceField>
+          </ReferenceField>
+          <AuthenticationData>
+            <Username>_</Username>
+            <Password>_</Password>
+            <ClientRefNum>_</ClientRefNum>
+          </AuthenticationData>
+          <DebugMode>false</DebugMode>
+        </Load>
+        <Quotes>
+          <Quote>
+            <LoadID>29042825</LoadID>
+            <QuoteID>255951297</QuoteID>
+            <CarrierName>UPS Freight</CarrierName>
+            <SCAC>UPGF</SCAC>
+            <ThirdPartyName />
+            <ThirdPartySCAC />
+            <ServiceID>31761584</ServiceID>
+            <RawPrice>
+              <NetPrice>216.24</NetPrice>
+              <FreightCharge>140.63</FreightCharge>
+              <DiscountAmount>966.67</DiscountAmount>
+              <FuelSurcharge>15.61</FuelSurcharge>
+              <Minimum xsi:nil="true" />
+              <GrossCharge>1107.30</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential (General)</Name>
+                  <Amount>60.00</Amount>
+                  <Code>GRES</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </RawPrice>
+            <CarrierPrice>
+              <NetPrice>200.63</NetPrice>
+              <FreightCharge>140.63</FreightCharge>
+              <DiscountAmount>966.67</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>1107.30</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential (General)</Name>
+                  <Amount>60.00</Amount>
+                  <Code>GRES</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CarrierPrice>
+            <CustomerPrice>
+              <NetPrice>183.88</NetPrice>
+              <FreightCharge>140.63</FreightCharge>
+              <DiscountAmount>966.67</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>1107.30</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Default Customer Markup Percent</Name>
+                  <Amount>43.25</Amount>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CustomerPrice>
+            <TransitTime>1</TransitTime>
+            <QuoteNumber>125355792</QuoteNumber>
+            <CarrierPerson>UPS Freight Automated Quote</CarrierPerson>
+            <CarrierNote />
+            <Datestamp>2020-05-15T11:15:22</Datestamp>
+            <Interline>false</Interline>
+            <Accepted>false</Accepted>
+            <CurrencyType>US_Dollar</CurrencyType>
+            <Service>LTL</Service>
+            <AccountNumber>01310518</AccountNumber>
+          </Quote>
+          <Quote>
+            <LoadID>29042825</LoadID>
+            <QuoteID>255951294</QuoteID>
+            <CarrierName>Saia Motor Freight</CarrierName>
+            <SCAC>SAIA</SCAC>
+            <ThirdPartyName />
+            <ThirdPartySCAC />
+            <ServiceID>31761584</ServiceID>
+            <RawPrice>
+              <NetPrice>274.16</NetPrice>
+              <FreightCharge>186.43</FreightCharge>
+              <DiscountAmount>313.37</DiscountAmount>
+              <FuelSurcharge>14.73</FuelSurcharge>
+              <Minimum xsi:nil="true" />
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>73.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </RawPrice>
+            <CarrierPrice>
+              <NetPrice>259.43</NetPrice>
+              <FreightCharge>186.43</FreightCharge>
+              <DiscountAmount>313.37</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>73.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CarrierPrice>
+            <CustomerPrice>
+              <NetPrice>241.26</NetPrice>
+              <FreightCharge>186.43</FreightCharge>
+              <DiscountAmount>313.37</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Default Customer Markup Percent</Name>
+                  <Amount>54.83</Amount>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CustomerPrice>
+            <TransitTime>1</TransitTime>
+            <QuoteNumber>5543383</QuoteNumber>
+            <CarrierPerson>SAIA Automated Quote</CarrierPerson>
+            <CarrierNote />
+            <Datestamp>2020-05-15T11:15:19</Datestamp>
+            <Interline>false</Interline>
+            <Accepted>false</Accepted>
+            <CurrencyType>US_Dollar</CurrencyType>
+            <Service>LTL</Service>
+            <AccountNumber>0945478</AccountNumber>
+          </Quote>
+          <Quote>
+            <LoadID>29042825</LoadID>
+            <QuoteID>255951299</QuoteID>
+            <CarrierName>Forward Air – Class Tariff</CarrierName>
+            <SCAC>FWDA</SCAC>
+            <ThirdPartyName />
+            <ThirdPartySCAC />
+            <ServiceID>31761584</ServiceID>
+            <RawPrice>
+              <NetPrice>306.56</NetPrice>
+              <FreightCharge>174.65</FreightCharge>
+              <DiscountAmount>0.00</DiscountAmount>
+              <FuelSurcharge>41.91</FuelSurcharge>
+              <Minimum xsi:nil="true" />
+              <GrossCharge>174.65</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>90.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </RawPrice>
+            <CarrierPrice>
+              <NetPrice>264.65</NetPrice>
+              <FreightCharge>174.65</FreightCharge>
+              <DiscountAmount>0.00</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>174.65</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>90.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CarrierPrice>
+            <CustomerPrice>
+              <NetPrice>235.96</NetPrice>
+              <FreightCharge>174.65</FreightCharge>
+              <DiscountAmount>0.00</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>174.65</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Default Customer Markup Percent</Name>
+                  <Amount>61.31</Amount>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CustomerPrice>
+            <TransitTime>1</TransitTime>
+            <QuoteNumber />
+            <CarrierPerson>FAF, Inc. Class Automated Quote</CarrierPerson>
+            <CarrierNote />
+            <Datestamp>2020-05-15T11:15:27</Datestamp>
+            <Interline>false</Interline>
+            <Accepted>false</Accepted>
+            <CurrencyType>US_Dollar</CurrencyType>
+            <Service>LTL</Service>
+            <AccountNumber>2176711</AccountNumber>
+          </Quote>
+          <Quote>
+            <LoadID>29042825</LoadID>
+            <QuoteID>255951293</QuoteID>
+            <CarrierName>Saia Guaranteed - 5</CarrierName>
+            <SCAC>SAIA</SCAC>
+            <ThirdPartyName />
+            <ThirdPartySCAC />
+            <ServiceID>31761584</ServiceID>
+            <RawPrice>
+              <NetPrice>311.45</NetPrice>
+              <FreightCharge>186.43</FreightCharge>
+              <DiscountAmount>313.37</DiscountAmount>
+              <FuelSurcharge>14.73</FuelSurcharge>
+              <Minimum xsi:nil="true" />
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>73.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+                <QuoteCharge>
+                  <Name>Guaranteed</Name>
+                  <Amount>37.29</Amount>
+                  <Code>LGUAR</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </RawPrice>
+            <CarrierPrice>
+              <NetPrice>296.72</NetPrice>
+              <FreightCharge>186.43</FreightCharge>
+              <DiscountAmount>313.37</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>73.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+                <QuoteCharge>
+                  <Name>Guaranteed</Name>
+                  <Amount>37.29</Amount>
+                  <Code>LGUAR</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CarrierPrice>
+            <CustomerPrice>
+              <NetPrice>248.72</NetPrice>
+              <FreightCharge>186.43</FreightCharge>
+              <DiscountAmount>313.37</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Default Customer Markup Percent</Name>
+                  <Amount>62.29</Amount>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CustomerPrice>
+            <TransitTime>1</TransitTime>
+            <QuoteNumber>5543394</QuoteNumber>
+            <CarrierPerson>SAIA Automated Quote</CarrierPerson>
+            <CarrierNote />
+            <Datestamp>2020-05-15T11:15:19</Datestamp>
+            <Interline>false</Interline>
+            <Accepted>false</Accepted>
+            <CurrencyType>US_Dollar</CurrencyType>
+            <Service>LTL</Service>
+            <AccountNumber>0945478</AccountNumber>
+          </Quote>
+          <Quote>
+            <LoadID>29042825</LoadID>
+            <QuoteID>255951292</QuoteID>
+            <CarrierName>Saia Guaranteed - 12</CarrierName>
+            <SCAC>SAIA</SCAC>
+            <ThirdPartyName />
+            <ThirdPartySCAC />
+            <ServiceID>31761584</ServiceID>
+            <RawPrice>
+              <NetPrice>330.09</NetPrice>
+              <FreightCharge>186.43</FreightCharge>
+              <DiscountAmount>313.37</DiscountAmount>
+              <FuelSurcharge>14.73</FuelSurcharge>
+              <Minimum xsi:nil="true" />
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>73.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+                <QuoteCharge>
+                  <Name>Guaranteed</Name>
+                  <Amount>55.93</Amount>
+                  <Code>LGUAR</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </RawPrice>
+            <CarrierPrice>
+              <NetPrice>315.36</NetPrice>
+              <FreightCharge>186.43</FreightCharge>
+              <DiscountAmount>313.37</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>73.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+                <QuoteCharge>
+                  <Name>Guaranteed</Name>
+                  <Amount>55.93</Amount>
+                  <Code>LGUAR</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CarrierPrice>
+            <CustomerPrice>
+              <NetPrice>252.45</NetPrice>
+              <FreightCharge>186.43</FreightCharge>
+              <DiscountAmount>313.37</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Default Customer Markup Percent</Name>
+                  <Amount>66.02</Amount>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CustomerPrice>
+            <TransitTime>1</TransitTime>
+            <QuoteNumber>5543394</QuoteNumber>
+            <CarrierPerson>SAIA Automated Quote</CarrierPerson>
+            <CarrierNote />
+            <Datestamp>2020-05-15T11:15:18</Datestamp>
+            <Interline>false</Interline>
+            <Accepted>false</Accepted>
+            <CurrencyType>US_Dollar</CurrencyType>
+            <Service>LTL</Service>
+            <AccountNumber>0945478</AccountNumber>
+          </Quote>
+          <Quote>
+            <LoadID>29042825</LoadID>
+            <QuoteID>255951298</QuoteID>
+            <CarrierName>Ward Trucking Llc</CarrierName>
+            <SCAC>WARD</SCAC>
+            <ThirdPartyName />
+            <ThirdPartySCAC />
+            <ServiceID>31761584</ServiceID>
+            <RawPrice>
+              <NetPrice>347.32</NetPrice>
+              <FreightCharge>150.44</FreightCharge>
+              <DiscountAmount>349.36</DiscountAmount>
+              <FuelSurcharge>11.88</FuelSurcharge>
+              <Minimum xsi:nil="true" />
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>185.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </RawPrice>
+            <CarrierPrice>
+              <NetPrice>335.44</NetPrice>
+              <FreightCharge>150.44</FreightCharge>
+              <DiscountAmount>349.36</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>185.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CarrierPrice>
+            <CustomerPrice>
+              <NetPrice>219.90</NetPrice>
+              <FreightCharge>150.44</FreightCharge>
+              <DiscountAmount>349.36</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Default Customer Markup Percent</Name>
+                  <Amount>69.46</Amount>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CustomerPrice>
+            <TransitTime>1</TransitTime>
+            <QuoteNumber>XMLWS0070524061</QuoteNumber>
+            <CarrierPerson>Ward Automated Quote</CarrierPerson>
+            <CarrierNote />
+            <Datestamp>2020-05-15T11:15:23</Datestamp>
+            <Interline>false</Interline>
+            <Accepted>false</Accepted>
+            <CurrencyType>US_Dollar</CurrencyType>
+            <Service>LTL</Service>
+            <AccountNumber>0923175</AccountNumber>
+          </Quote>
+          <Quote>
+            <LoadID>29042825</LoadID>
+            <QuoteID>255951295</QuoteID>
+            <CarrierName>A. Duie Pyle</CarrierName>
+            <SCAC>PYLE</SCAC>
+            <ThirdPartyName />
+            <ThirdPartySCAC />
+            <ServiceID>31761584</ServiceID>
+            <RawPrice>
+              <NetPrice>354.60</NetPrice>
+              <FreightCharge>282.30</FreightCharge>
+              <DiscountAmount>0.00</DiscountAmount>
+              <FuelSurcharge>22.30</FuelSurcharge>
+              <Minimum xsi:nil="true" />
+              <GrossCharge>282.30</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Liftgate Delivery</Name>
+                  <Amount>25.00</Amount>
+                  <Code>CLFTG</Code>
+                </QuoteCharge>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>25.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </RawPrice>
+            <CarrierPrice>
+              <NetPrice>332.30</NetPrice>
+              <FreightCharge>282.30</FreightCharge>
+              <DiscountAmount>0.00</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>282.30</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Liftgate Delivery</Name>
+                  <Amount>25.00</Amount>
+                  <Code>CLFTG</Code>
+                </QuoteCharge>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>25.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CarrierPrice>
+            <CustomerPrice>
+              <NetPrice>353.22</NetPrice>
+              <FreightCharge>282.30</FreightCharge>
+              <DiscountAmount>0.00</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>282.30</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Default Customer Markup Percent</Name>
+                  <Amount>70.92</Amount>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CustomerPrice>
+            <TransitTime>2</TransitTime>
+            <QuoteNumber>40153541</QuoteNumber>
+            <CarrierPerson>A Duie Pyle Automation</CarrierPerson>
+            <CarrierNote />
+            <Datestamp>2020-05-15T11:15:20</Datestamp>
+            <Interline>false</Interline>
+            <Accepted>false</Accepted>
+            <CurrencyType>US_Dollar</CurrencyType>
+            <Service>LTL</Service>
+            <AccountNumber>P1XPCH37</AccountNumber>
+          </Quote>
+          <Quote>
+            <LoadID>29042825</LoadID>
+            <QuoteID>255951296</QuoteID>
+            <CarrierName>Dayton Freight Standard</CarrierName>
+            <SCAC>DAFG</SCAC>
+            <ThirdPartyName />
+            <ThirdPartySCAC />
+            <ServiceID>31761584</ServiceID>
+            <RawPrice>
+              <NetPrice>372.66</NetPrice>
+              <FreightCharge>202.42</FreightCharge>
+              <DiscountAmount>297.38</DiscountAmount>
+              <FuelSurcharge>20.24</FuelSurcharge>
+              <Minimum xsi:nil="true" />
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>150.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </RawPrice>
+            <CarrierPrice>
+              <NetPrice>352.42</NetPrice>
+              <FreightCharge>202.42</FreightCharge>
+              <DiscountAmount>297.38</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Residential Pickup</Name>
+                  <Amount>150.00</Amount>
+                  <Code>SRPCK</Code>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CarrierPrice>
+            <CustomerPrice>
+              <NetPrice>276.95</NetPrice>
+              <FreightCharge>202.42</FreightCharge>
+              <DiscountAmount>297.38</DiscountAmount>
+              <FuelSurcharge>0.00</FuelSurcharge>
+              <Minimum>0.00</Minimum>
+              <GrossCharge>499.80</GrossCharge>
+              <Tariff xsi:nil="true" />
+              <Interline>0</Interline>
+              <AccessorialCharges xsi:nil="true" />
+              <OtherCharges xsi:nil="true" />
+              <Charges>
+                <QuoteCharge>
+                  <Name>Default Customer Markup Percent</Name>
+                  <Amount>74.53</Amount>
+                </QuoteCharge>
+              </Charges>
+              <Markup xsi:nil="true" />
+            </CustomerPrice>
+            <TransitTime>1</TransitTime>
+            <QuoteNumber>46634631</QuoteNumber>
+            <CarrierPerson>Account Rep</CarrierPerson>
+            <CarrierNote />
+            <Datestamp>2020-05-15T11:15:20</Datestamp>
+            <Interline>false</Interline>
+            <Accepted>false</Accepted>
+            <CurrencyType>US_Dollar</CurrencyType>
+            <Service>LTL</Service>
+            <AccountNumber>6137965</AccountNumber>
+          </Quote>
+        </Quotes>
+        <FailedQuotes>
+          <FailedQuote>
+            <CarrierName>AAA Cooper</CarrierName>
+            <SCAC>AACT</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>ShipperOrConsignee</ReasonCode>
+            <Reason>Shipment’s shipper location or consignee location is not valid.</Reason>
+            <Datestamp>2020-05-15T11:15:19.177</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Averitt</CarrierName>
+            <SCAC>AVRT</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>Accessorial</ReasonCode>
+            <Reason>Shipment contains an accessorial that is not supported by the carrier.</Reason>
+            <Datestamp>2020-05-15T11:15:12.59</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Beaver Express Service</CarrierName>
+            <SCAC>BEAV</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>CoverageArea</ReasonCode>
+            <Reason>Shipment is outside of the carrier’s coverage area.</Reason>
+            <Datestamp>2020-05-15T11:15:19.283</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Cross Country Freight Solutions</CarrierName>
+            <SCAC>CCYQ</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>CoverageArea</ReasonCode>
+            <Reason>Shipment is outside of the carrier’s coverage area.</Reason>
+            <Datestamp>2020-05-15T11:15:16.07</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Day &amp; Ross</CarrierName>
+            <SCAC>DAYR</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>GeneralIssue</ReasonCode>
+            <Reason>Carrier’s website returned an error when rating this shipment.</Reason>
+            <Datestamp>2020-05-15T11:15:15.677</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Dependable Highway Express</CarrierName>
+            <SCAC>DPHE</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>CoverageArea</ReasonCode>
+            <Reason>Shipment is outside of the carrier’s coverage area.</Reason>
+            <Datestamp>2020-05-15T11:15:14.123</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Dohrn Transfer Co.</CarrierName>
+            <SCAC>DHRN</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>GeneralIssue</ReasonCode>
+            <Reason>Carrier’s website returned an error when rating this shipment.</Reason>
+            <Datestamp>2020-05-15T11:15:25.617</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Dot-Line Transportation</CarrierName>
+            <SCAC>DOLR</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>CoverageArea</ReasonCode>
+            <Reason>Shipment is outside of the carrier’s coverage area.</Reason>
+            <Datestamp>2020-05-15T11:15:23.803</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Estes Express Lines</CarrierName>
+            <SCAC>EXLA</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>PickupDate</ReasonCode>
+            <Reason>Shipment’s pickup date is not valid.</Reason>
+            <Datestamp>2020-05-15T11:15:22.27</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Fed Ex Economy</CarrierName>
+            <SCAC>FXNL</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>GeneralIssue</ReasonCode>
+            <Reason>Carrier’s website returned an error when rating this shipment.</Reason>
+            <Datestamp>2020-05-15T11:15:13.41</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Fed Ex Economy</CarrierName>
+            <SCAC>FXNL</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>GeneralIssue</ReasonCode>
+            <Reason>Carrier’s website returned an error when rating this shipment.</Reason>
+            <Datestamp>2020-05-15T11:15:13.617</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Fort Transportation</CarrierName>
+            <SCAC>FTSC</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>CoverageArea</ReasonCode>
+            <Reason>Shipment is outside of the carrier’s coverage area.</Reason>
+            <Datestamp>2020-05-15T11:15:20.563</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Magnum LTL Inc.</CarrierName>
+            <SCAC>MGUL</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>GeneralIssue</ReasonCode>
+            <Reason>Carrier’s website returned an error when rating this shipment.</Reason>
+            <Datestamp>2020-05-15T11:15:14.317</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Midland Transport Limited</CarrierName>
+            <SCAC>MDLD</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>CoverageArea</ReasonCode>
+            <Reason>Shipment is outside of the carrier’s coverage area.</Reason>
+            <Datestamp>2020-05-15T11:15:17.527</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>New Penn Motor Express, Inc</CarrierName>
+            <SCAC>NPME</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>GeneralIssue</ReasonCode>
+            <Reason>Carrier’s website returned an error when rating this shipment.</Reason>
+            <Datestamp>2020-05-15T11:15:18.94</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Pitt Ohio Express</CarrierName>
+            <SCAC>PITD</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>GeneralIssue</ReasonCode>
+            <Reason>Carrier’s website returned an error when rating this shipment.</Reason>
+            <Datestamp>2020-05-15T11:15:21.753</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Roadrunner Transportation Services Inc</CarrierName>
+            <SCAC>RDFS</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>CoverageArea</ReasonCode>
+            <Reason>Shipment is outside of the carrier’s coverage area.</Reason>
+            <Datestamp>2020-05-15T11:15:22.713</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Southeastern Freight Lines</CarrierName>
+            <SCAC>SEFL</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>Accessorial</ReasonCode>
+            <Reason>Shipment contains an accessorial that is not supported by the carrier.</Reason>
+            <Datestamp>2020-05-15T11:15:19.737</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Southwestern Motor Transport Inc.</CarrierName>
+            <SCAC>SMTL</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>CoverageArea</ReasonCode>
+            <Reason>Shipment is outside of the carrier’s coverage area.</Reason>
+            <Datestamp>2020-05-15T11:15:18.123</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>Standard Forwarding LLC</CarrierName>
+            <SCAC>STDF</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>CoverageArea</ReasonCode>
+            <Reason>Shipment is outside of the carrier’s coverage area.</Reason>
+            <Datestamp>2020-05-15T11:15:15.37</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>USF Holland </CarrierName>
+            <SCAC>HMES</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>Accessorial</ReasonCode>
+            <Reason>Shipment contains an accessorial that is not supported by the carrier.</Reason>
+            <Datestamp>2020-05-15T11:15:13.12</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>USF Reddaway</CarrierName>
+            <SCAC>RETL</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>CoverageArea</ReasonCode>
+            <Reason>Shipment is outside of the carrier’s coverage area.</Reason>
+            <Datestamp>2020-05-15T11:15:16.66</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>West End Express</CarrierName>
+            <SCAC>WEXI</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>Accessorial</ReasonCode>
+            <Reason>Shipment contains an accessorial that is not supported by the carrier.</Reason>
+            <Datestamp>2020-05-15T11:15:21.07</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>XPO Logistics Freight, Inc.</CarrierName>
+            <SCAC>CNWY</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>GeneralIssue</ReasonCode>
+            <Reason>Carrier’s website returned an error when rating this shipment.</Reason>
+            <Datestamp>2020-05-15T11:15:22.84</Datestamp>
+          </FailedQuote>
+          <FailedQuote>
+            <CarrierName>XPO Logistics Freight, Inc.</CarrierName>
+            <SCAC>CNWY</SCAC>
+            <Service>LTL</Service>
+            <ReasonCode>GeneralIssue</ReasonCode>
+            <Reason>Carrier’s website returned an error when rating this shipment.</Reason>
+            <Datestamp>2020-05-15T11:15:22.97</Datestamp>
+          </FailedQuote>
+        </FailedQuotes>
+        <Notes>
+          <Note>
+            <Text>Forward Air – Class Tariff: The quoted price is not valid if rates change between now and the time when the shipment is tendered. The quoted price is an estimate. Final charges will reflect the chargeable weight determined when Forward Air receives the shipment. Chargeable weight is the greater of actual or dimensional weight.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:27</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Dot-Line Transportation (5 Pallets Spots - Maximum): Carrier could not service route</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:23</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Override for 0923175 - Ward Trucking Llc&lt;br /&gt;- Default Ship&lt;br /&gt;- Default Pay&lt;br /&gt;- Billing</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:23</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>
+              Script had an exception: [203352] System.Exception: Error in: HandleErrorResponse
+
+              :: Message: Error in: GetResponse : System.Net.WebException: The remote server returned an error: (400) Bad Request.
+              at System.Net.HttpWebRequest.GetResponse()
+              at Banyan.CarrierEngine.WebAccessHandler.Post(String url, String data)
+
+              :: Stack:    at Banyan.CarrierEngine.WebAccessHandler.HandleErrorResponse(Int32 i, WebException webEx)
+              at Banyan.CarrierEngine.WebAccessHandler.Post(String url, String data)
+              at Banyan.CarrierEngine.WebAccessHandler.Post(String url, String data)
+              at Banyan.CarrierEngine.XPOLogistics.GetResponse(XpoRequest request, String auth)
+              at Banyan.CarrierEngine.XPOLogistics.GetRates()
+            </Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:23</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>
+              Script had an exception: [203351] System.Exception: Error in: HandleErrorResponse
+
+              :: Message: Error in: GetResponse : System.Net.WebException: The remote server returned an error: (400) Bad Request.
+              at System.Net.HttpWebRequest.GetResponse()
+              at Banyan.CarrierEngine.WebAccessHandler.Post(String url, String data)
+
+              :: Stack:    at Banyan.CarrierEngine.WebAccessHandler.HandleErrorResponse(Int32 i, WebException webEx)
+              at Banyan.CarrierEngine.WebAccessHandler.Post(String url, String data)
+              at Banyan.CarrierEngine.WebAccessHandler.Post(String url, String data)
+              at Banyan.CarrierEngine.XPOLogistics.GetResponse(XpoRequest request, String auth)
+              at Banyan.CarrierEngine.XPOLogistics.GetRates()
+            </Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:23</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>XPO Logistics Freight, Inc.- Standard and Hazmat did not rate and a quote request email has NOT been sent. No agents with email addresses were associated with this carrier. Please contact your carrier Agent for a quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:23</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>XPO Logistics Freight, Inc.- Standard and Hazmat: Please contact your service provider for a LTL quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:23</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>XPO Logistics Freight, Inc. did not rate and a quote request email has NOT been sent. No agents with email addresses were associated with this carrier. Please contact your carrier Agent for a quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:23</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>Override for 01310518 - UPS Freight LTL&lt;br /&gt;- Default Ship&lt;br /&gt;- Default Pay&lt;br /&gt;- Billing</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:23</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>XPO Logistics Freight, Inc.: Please contact your service provider for a LTL quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:23</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>XPO Logistics Freight, Inc.- Standard and Hazmat: Shipment date cannot be more than 364 days in the past|</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:22</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Roadrunner Transportation Services Inc: There is no standard service from 44135 to 43085</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:22</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>XPO Logistics Freight, Inc. - Guaranteed: Shipment date cannot be more than 364 days in the past|</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:22</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Estes Express Lines: Pickup Date cannot be less than Current Date. Please double check Pickup Date.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:22</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>&lt;a href='javascript:WriteCarrierLink("13618","1660162")'&gt;Pitt Ohio Express - No single pieces 97" or greater.&lt;/a&gt; did not rate.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:21</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>Pitt Ohio Express - No single pieces 97" or greater.: Shipment date is out of range, it should be between 05/15/2020 and 05/16/2020</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:21</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>West End - No Web Dispatch. Please Call (732) 993-9900 For Pickup did not rate.   This shipment contains accessorial requirements not supported by the carrier's rate engine.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:21</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>West End - No Web Dispatch. Please Call (732) 993-9900 For Pickup: No quote request email has been sent. No agents with email addresses were associated with this carrier. Please contact your carrier Agent for a quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:21</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>West End - No Web Dispatch. Please Call (732) 993-9900 For Pickup: Please contact your service provider for a LTL quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:21</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Override for P1XPCH37 - A. Duie Pyle&lt;br /&gt;- Default Ship&lt;br /&gt;- Default Pay&lt;br /&gt;- Billing</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:20</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>Fort Transportation did not rate.   Load is outside of the carrier's coverage area.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:20</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Southeastern Freight Lines did not rate.   This shipment contains accessorial requirements not supported by the carrier's rate engine.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:20</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Southeastern Freight Lines: No quote request email has been sent. No agents with email addresses were associated with this carrier. Please contact your carrier Agent for a quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:19</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>Southeastern Freight Lines: Please contact your service provider for a LTL quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:19</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Beaver Express Service did not rate.   Load is outside of the carrier's coverage area.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:19</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>AAA Cooper: No Service Available for Specified Points</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:19</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>New Penn Motor Express, Inc: Zip Code must be serviced directly for 3rd Party quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:18</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Southwestern Motor Transport Inc. did not rate.   Load is outside of the carrier's coverage area.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:18</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Midland Transport Limited did not rate.   Load is outside of the carrier's coverage area.   This shipment contains accessorial requirements not supported by the carrier's rate engine.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:17</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>USF Reddaway did not rate.   Load is outside of the carrier's coverage area.   This shipment contains accessorial requirements not supported by the carrier's rate engine.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:16</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Cross Country Freight Solutions did not rate.   Load is outside of the carrier's coverage area.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:16</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Not for intra-Canada use: Day and Ross Does not support USA to USA loads.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:15</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Standard Forwarding LLC did not rate.   Load is outside of the carrier's coverage area.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:15</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Magnum LTL Inc. did not rate.   Carrier Down For Maintenance 12062017   Load is outside of the carrier's coverage area.   This shipment contains accessorial requirements not supported by the carrier's rate engine.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:14</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Dependable Highway Express did not rate.   Load is outside of the carrier's coverage area.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:14</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Fed Ex Economy: Shipment dimensions WIDTH exceeds the maximum allowed of 93 inches.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:13</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>USF Holland did not rate.   This shipment contains accessorial requirements not supported by the carrier's rate engine.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:13</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>USF Holland: No quote request email has been sent. No agents with email addresses were associated with this carrier. Please contact your carrier Agent for a quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:13</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>USF Holland: Please contact your service provider for a LTL quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:13</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Fed Ex Economy: Shipment dimensions WIDTH exceeds the maximum allowed of 93 inches.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:13</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Averitt did not rate.   This shipment contains accessorial requirements not supported by the carrier's rate engine.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:12</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Averitt: No quote request email has been sent. No agents with email addresses were associated with this carrier. Please contact your carrier Agent for a quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:12</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+          <Note>
+            <Text>Averitt: Please contact your service provider for a LTL quote.</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:12</DateStamp>
+            <NoteType>QuoteRequest</NoteType>
+          </Note>
+          <Note>
+            <Text>Load Created</Text>
+            <User>Joe Zagorski</User>
+            <DateStamp>2020-05-15T11:15:09</DateStamp>
+            <NoteType>SystemEvent</NoteType>
+          </Note>
+          <Note>
+            <Text>Original BOLID: USLG04565</Text>
+            <User>Automation</User>
+            <DateStamp>2020-05-15T11:15:09</DateStamp>
+            <NoteType>TechnicalNote</NoteType>
+          </Note>
+        </Notes>
+        <RatingComplete>true</RatingComplete>
+      </ImportForQuote_SyncResult>
+    </ImportForQuote_SyncResponse>
+  </soap:Body>
+</soap:Envelope>
