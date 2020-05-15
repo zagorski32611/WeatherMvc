@@ -43,7 +43,9 @@ namespace weatherMvc
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.Add(new ServiceDescriptor(typeof(ILocationService), new LocationService()));
+            //services.Add(new ServiceDescriptor(typeof(ILocationService), new LocationService(context)));
+
+            services.AddScoped<ILocationService, LocationService>();
 
             services.Configure<IdentityOptions>(options =>
         {

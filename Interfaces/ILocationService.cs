@@ -6,12 +6,10 @@ using weatherMvc.Models;
 
 namespace weatherMvc.Interfaces
 {
-    interface ILocationService
+    public interface ILocationService
     {
-        public Task<LocationData> LocationSearch(string searchAddress);
+        Task<LocationData> LocationSearch(string searchAddress);
 
-        public void SaveLocationData(LocationData location);
-
-
+        void SaveLocationData(LocationData location);
     }
 }

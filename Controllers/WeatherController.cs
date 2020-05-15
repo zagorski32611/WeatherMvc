@@ -11,22 +11,26 @@ using weatherMvc.Data;
 using weatherMvc.Models;
 using System.Text.RegularExpressions;
 using weatherMvc.Interfaces;
-using SQLitePCL;
+using weatherMvc.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace weatherMvc.Controllers
 {
-    public partial class WeatherController : Controller, ILocationService
+    public partial class WeatherController : Controller
     {
         private readonly WeatherMvcDbContext _context;
 
         private readonly ILocationService _location;
 
-        public WeatherController(WeatherMvcDbContext context)
+        public WeatherController(ILocationService location, WeatherMvcDbContext context)
         {
-            _context = context; 
+            _context = context;
+            _location = location;
         }
 
-        Task<LocationData> ILocationService.LocationSearch(string searchAddress)
+
+        // Implement Location Service methods:
+        Task<LocationData> LocationSearch(string searchAddress)
         {
             return _location.LocationSearch(searchAddress);
         }
@@ -36,6 +40,8 @@ namespace weatherMvc.Controllers
             _location.SaveLocationData(location);
         }
 
+
+        // actual controller methods:
         public IActionResult setLocation()
         {
             var ViewModel = new LocationData();
@@ -70,7 +76,6 @@ namespace weatherMvc.Controllers
             {
                 // use LocationService to get location data and save the location object:
                 LocationData geocode = _location.LocationSearch(rawAddress).Result;
-                _location.SaveLocationData(geocode);
 
                 ViewData["location"] = geocode;
 
@@ -125,7 +130,7 @@ namespace weatherMvc.Controllers
             }
         }
 
-       
+
 
 
         public static DateTime GetDateTime(long unixTimeStamp)

@@ -14,6 +14,11 @@ namespace weatherMvc.Services
     {
         private readonly WeatherMvcDbContext _context;
 
+        public LocationService(WeatherMvcDbContext context)
+        {
+            _context = context;
+        }
+
         public async Task<LocationData> LocationSearch(string searchAddress)
         {
             LocationData location = new LocationData();
