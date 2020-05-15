@@ -41,6 +41,8 @@ namespace weatherMvc.Services
 
                 location = deserializedLocation;
 
+                SaveLocationData(location);
+
                 return location;
             }
             catch (Exception e)
