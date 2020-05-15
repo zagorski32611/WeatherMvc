@@ -22,22 +22,13 @@ namespace weatherMvc.Controllers
 
         private readonly ILocationService _location;
 
-        public WeatherController(ILocationService location, WeatherMvcDbContext context)
+        private readonly IWeatherService _weatherService;
+
+        public WeatherController(WeatherMvcDbContext context, ILocationService location, IWeatherService weatherService)
         {
             _context = context;
             _location = location;
-        }
-
-
-        // Implement Location Service methods:
-        Task<LocationData> LocationSearch(string searchAddress)
-        {
-            return _location.LocationSearch(searchAddress);
-        }
-
-        public void SaveLocationData(LocationData location)
-        {
-            _location.SaveLocationData(location);
+            _weatherService = weatherService;
         }
 
 
@@ -68,7 +59,7 @@ namespace weatherMvc.Controllers
 
             if (rawAddress.Length == 0)
             {
-                WeatherData weather = CallDarkSky(longitude, latitude).Result;
+                WeatherData weather = _weatherService.CallDarkSky(longitude, latitude).Result;
                 ViewData["weatherData"] = weather;
                 return View();
             }
@@ -88,7 +79,7 @@ namespace weatherMvc.Controllers
                     double result_lat = geocode.results[0].geometry.location.lat;
                     double result_lng = geocode.results[0].geometry.location.lng;
 
-                    WeatherData weather = CallDarkSky(result_lng, result_lat).Result;
+                    WeatherData weather = _weatherService.CallDarkSky(result_lng, result_lat).Result;
 
                     ViewData["weatherData"] = weather;
 
@@ -97,42 +88,7 @@ namespace weatherMvc.Controllers
             }
         }
 
-        public async Task<WeatherData> CallDarkSky(double longitude, double latitude)
-        {
-            WeatherData weather_data = new WeatherData();
-            HttpClient httpclient = new HttpClient();
-
-            string weather_uri = $"https://api.darksky.net/forecast/dcd2262dfdbb2349f6e41e54e7a8d40a/{latitude},{longitude}?exclude=minutely,hourly";
-            // 41.443423,-81.775168
-
-            try
-            {
-                HttpResponseMessage response = await httpclient.GetAsync($"{weather_uri}");
-                response.EnsureSuccessStatusCode();
-
-                string responseBody = await response.Content.ReadAsStringAsync();
-
-                WeatherData deserializedWeather = JsonConvert.DeserializeObject<WeatherData>(responseBody);
-
-                weather_data = deserializedWeather;
-
-                _context.Add(weather_data);
-
-                await _context.SaveChangesAsync();
-
-                return weather_data;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Cannot Reach Dark Sky...");
-                Console.WriteLine($"Reason: {e}");
-                return weather_data;
-            }
-        }
-
-
-
-
+        
         public static DateTime GetDateTime(long unixTimeStamp)
         {
             DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, kind: System.DateTimeKind.Utc);

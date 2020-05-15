@@ -41,14 +41,16 @@ namespace weatherMvc.Services
 
                 location = deserializedLocation;
 
-                SaveLocationData(location);
-
                 return location;
             }
             catch (Exception e)
             {
                 Console.WriteLine($"Cannot reach google because {e}");
                 return location;
+            }
+            finally
+            {
+                SaveLocationData(location);
             }
         }
 
