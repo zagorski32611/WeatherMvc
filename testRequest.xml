@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ImportForQuote_Sync xmlns="http://www.banyantechnology.com/Services/ConnectivityPlatform/">
+      <request>
+        <AuthenticationData>
+          <Username>jzagorski</Username>
+          <Password>Banyan1</Password>
+          <ClientRefNum />
+        </AuthenticationData>
+        <Loadinfo>
+          <ManifestID />
+          <BOLNumber></BOLNumber>
+          <CustomerPO />
+          <InvoiceID />
+          <BillingID />
+        </Loadinfo>
+        <BillTo>
+          <Name />
+          <Note />
+          <ShipType>ThirdParty</ShipType>
+          <PayType>Prepaid</PayType>
+          <UseDefaultBillTo>true</UseDefaultBillTo>
+          <AddressInfo />
+          <ContactInfo />
+        </BillTo>
+        <RateServices>
+          <RateServices>
+            <ServiceCode>LTL</ServiceCode>
+            <ShippingQty>1</ShippingQty>
+            <PackageType>Pallets</PackageType>
+            <EquipmentType>VanTrailer_Standard</EquipmentType>
+            <AdditionalWeight>0.00</AdditionalWeight>
+            <SpecialInstructions>Don't break</SpecialInstructions>
+          </RateServices>
+        </RateServices>
+        <Shipper>
+          <ContactInfo>
+            <FirstName>Joey</FirstName>
+            <LastName>Fingers</LastName>
+            <ContactName>Joey</ContactName>
+            <Phone>216-555-11234</Phone>
+            <PhoneExt />
+            <Fax />
+            <Email>fingers@example.com</Email>
+          </ContactInfo>
+          <AddressInfo>
+            <Address1>123 Main St</Address1>
+            <Address2/>
+            <City>Cleveland</City>
+            <CountryName>United States</CountryName>
+            <CountryCode>US</CountryCode>
+            <State>OH</State>
+            <Zipcode>44135</Zipcode>
+            <LocationName>Main Dock</LocationName>
+          </AddressInfo>
+          <CompanyName>Test Shipper</CompanyName>
+          <Note/>
+          <CompanyID />
+          <LocationName>Test Location</LocationName>
+          <VendorID />
+          <DCRefNum />
+          <Dock>
+            <Name>Main Dock</Name>
+            <Note>Shipper/Dock/Note</Note>
+            <OpenTime>2018-10-08T06:00:00</OpenTime>
+            <ShipmentDateTime>2018-10-08T11:00:00</ShipmentDateTime>
+            <CloseTime>2018-10-08T18:00:00</CloseTime>
+            <ConfirmationNumber>Shipper/Dock/ConfirmationNumber</ConfirmationNumber>
+          </Dock>
+        </Shipper>
+        <Consignee>
+          <ContactInfo>
+            <FirstName>Mike</FirstName>
+            <LastName>Jones</LastName>
+            <ContactName>Mike</ContactName>
+            <Phone>614-555-1234</Phone>
+            <PhoneExt />
+            <Fax />
+            <Email>Mike@example.com</Email>
+          </ContactInfo>
+          <AddressInfo>
+            <Address1>1234 Test Road</Address1>
+            <Address2/>
+            <City>Columbus</City>
+            <CountryName>United States</CountryName>
+            <CountryCode>US</CountryCode>
+            <State>OH</State>
+            <Zipcode>43085</Zipcode>
+            <LocationName>Main Warehouse</LocationName>
+          </AddressInfo>
+          <CompanyName>Test Consignee</CompanyName>
+          <Note/>
+          <CompanyID/>
+          <LocationName>Test Location</LocationName>
+          <VendorID />
+          <DCRefNum>DCRef Test</DCRefNum>
+          <Dock>
+            <Name>Main Dock</Name>
+            <Note>Consignee/Dock/Note</Note>
+            <OpenTime>2018-10-08T01:00:00</OpenTime>
+            <ShipmentDateTime>2018-10-08T13:00:00</ShipmentDateTime>
+            <CloseTime>2018-10-08T05:00:00</CloseTime>
+            <ConfirmationNumber>Consignee/Dock/ConfirmationNumber</ConfirmationNumber>
+          </Dock>
+        </Consignee>
+        <Products>
+          <Product>
+            <Quantity>2</Quantity>
+            <PackageType>Boxes</PackageType>
+            <Weight>2500</Weight>
+            <Class>c50</Class>
+            <NMFC>9876</NMFC>
+            <SKU />
+            <IsHazmat>false</IsHazmat>
+            <HazmatPhoneNumber />
+            <HazmatPhoneExt />
+            <Description>Boomerangs -SORT2</Description>
+            <Length>48</Length>
+            <Width>48</Width>
+            <Height>60</Height>
+            <UOM>English</UOM>
+            <SortOrder>2</SortOrder>
+            <ReferenceNumber />
+          </Product>
+          <Product>
+            <Quantity>1</Quantity>
+            <PackageType>Boxes</PackageType>
+            <Weight>500</Weight>
+            <Class>c50</Class>
+            <NMFC>9876</NMFC>
+            <SKU />
+            <IsHazmat>false</IsHazmat>
+            <HazmatPhoneNumber />
+            <HazmatPhoneExt />
+            <Description>Coffee -SORT1</Description>
+            <Length>48</Length>
+            <Width>48</Width>
+            <Height>60</Height>
+            <UOM>English</UOM>
+            <SortOrder>1</SortOrder>
+            <ReferenceNumber />
+          </Product>
+        </Products>
+        <ShipperAccessorials>
+          <AppointmentRequired>false</AppointmentRequired>
+          <InsidePickup>false</InsidePickup>
+          <SortSegregate>false</SortSegregate>
+          <PalletJack>false</PalletJack>
+          <ResidentialPickup>true</ResidentialPickup>
+          <LiftgatePickup>false</LiftgatePickup>
+          <MarkingTagging>false</MarkingTagging>
+          <TradeShowPickup>false</TradeShowPickup>
+          <NYCMetro>false</NYCMetro>
+          <LimitedAccessType>School</LimitedAccessType>
+        </ShipperAccessorials>
+        <ConsigneeAccessorials>
+          <AppointmentRequired>false</AppointmentRequired>
+          <InsideDelivery>false</InsideDelivery>
+          <SortSegregate>false</SortSegregate>
+          <PalletJack>false</PalletJack>
+          <ResidentialDelivery>false</ResidentialDelivery>
+          <LiftgateDelivery>false</LiftgateDelivery>
+          <MarkingTagging>false</MarkingTagging>
+          <TradeShowDelivery>false</TradeShowDelivery>
+          <NYCMetro>false</NYCMetro>
+          <DeliveryNotification>false</DeliveryNotification>
+          <LimitedAccessType>false</LimitedAccessType>
+        </ConsigneeAccessorials>
+        <LoadAccessorials>
+          <Guaranteed>false</Guaranteed>
+          <TimeDefinite>false</TimeDefinite>
+          <Expedited>false</Expedited>
+          <HolidayPickup>false</HolidayPickup>
+          <HolidayDelivery>false</HolidayDelivery>
+          <WeightDetermination>false</WeightDetermination>
+          <BlindShipment>false</BlindShipment>
+          <BlanketService>false</BlanketService>
+          <SingleShipment>false</SingleShipment>
+          <CustomsInBond>false</CustomsInBond>
+          <OverDimension>false</OverDimension>
+          <Stackable>false</Stackable>
+          <Turnkey>false</Turnkey>
+          <FoodGradeProducts>false</FoodGradeProducts>
+          <TSA>false</TSA>
+          <Bulkhead>false</Bulkhead>
+        </LoadAccessorials>
+      </request>
+    </ImportForQuote_Sync>
+  </soap:Body>
+</soap:Envelope>
