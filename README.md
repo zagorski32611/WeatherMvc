@@ -4,25 +4,26 @@
 This web application is built with .NET Core MVC 3.1 and SQL Server Express.
 There is currently no JavaScript in the application.
 
+# Functionality
+This web app takes a user's address and sends it to Google's Geocode API and gets the coordinates of the user input (among other things). Then, with those coordinates, the app calls DarkSky to get the current weather information.
+
 # Past State:
-Previously, this app used controller versions 
-The user enters in their address and gets current weather information. 
+Previously, this app used controller methods to make API calls to Google and DarkSky. 
+
 Behind the scenes,the app takes the user's input, HTML encodes it, then sends it to Google's Geocoding API.
 The JSON results from Google contain the coordinates of the user's address (along with much more information). 
-In the same method, the app uses those coordinates to call DarkSky's weather API for current weather information and the 7 day forcast.
+In the same method, the app uses those coordinates to call DarkSky's weather API for current weather information.
+
 The application saves the Geocoding and Weather results in a SQL Server Express database. 
 
 # Current State - Application
 
-Currently, this application uses controller methods to make API calls to Google and Dark Sky, save data to the database and send data to the view. In the current refactor, I will use Dependency Injection to create three services:
+Currently, this application uses Application Services to make API calls to Google and Dark Sky, save data to the database. 
+This current refactor uses Dependency Injection to create two services:
 1. Location Service (ILocationService)
 2. Weather Service (IWeatherService)
-3. Save To DB Services (ISaveDb)
 
 This will will seperate business logic from the controllers and (hopefully) make debugging specific calls easier.
-
-Branches for Each Change: 
-Location Service: Location_service
 
 
 Eventually, the user will have the following:
