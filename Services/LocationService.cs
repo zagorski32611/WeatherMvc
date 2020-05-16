@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using weatherMvc.Models;
 using weatherMvc.Interfaces;
@@ -58,8 +56,8 @@ namespace weatherMvc.Services
         {
             try
             {
+                await _context.AddAsync(location);
                 await _context.SaveChangesAsync();
-
             }
             catch(Exception e)
             {

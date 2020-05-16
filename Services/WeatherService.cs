@@ -4,10 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using weatherMvc.Data;
 using weatherMvc.Models;
-using System.Text.RegularExpressions;
 using weatherMvc.Interfaces;
-using weatherMvc.Services;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace weatherMvc.Services
 {
