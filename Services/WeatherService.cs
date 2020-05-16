@@ -15,8 +15,10 @@ namespace weatherMvc.Services
     {
         private readonly WeatherMvcDbContext _context;
 
-        public WeatherService(WeatherMvcDbContext context) => _context = context;
-
+        public WeatherService(WeatherMvcDbContext context)
+        {
+            _context = context;
+        }
 
         public async Task<WeatherData> CallDarkSky(double longitude, double latitude)
         {

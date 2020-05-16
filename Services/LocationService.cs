@@ -58,8 +58,6 @@ namespace weatherMvc.Services
         {
             try
             {
-
-                _context.Add(location);
                 await _context.SaveChangesAsync();
 
             }

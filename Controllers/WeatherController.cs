@@ -88,7 +88,6 @@ namespace weatherMvc.Controllers
             }
         }
 
-        
         public static DateTime GetDateTime(long unixTimeStamp)
         {
             DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, kind: System.DateTimeKind.Utc);
