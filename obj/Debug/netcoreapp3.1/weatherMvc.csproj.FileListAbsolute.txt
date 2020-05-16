@@ -160,10 +160,6 @@
 /home/joe/development/netcore/weatherMvc/weatherMvc/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll
 /home/joe/development/netcore/weatherMvc/weatherMvc/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll
 /home/joe/development/netcore/weatherMvc/weatherMvc/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-/home/joe/development/netcore/weatherMvc/weatherMvc/obj/Debug/netcoreapp3.1/Razor/Views/Weather/Create.cshtml.g.cs
-/home/joe/development/netcore/weatherMvc/weatherMvc/obj/Debug/netcoreapp3.1/Razor/Views/Weather/Delete.cshtml.g.cs
-/home/joe/development/netcore/weatherMvc/weatherMvc/obj/Debug/netcoreapp3.1/Razor/Views/Weather/Details.cshtml.g.cs
-/home/joe/development/netcore/weatherMvc/weatherMvc/obj/Debug/netcoreapp3.1/Razor/Views/Weather/Edit.cshtml.g.cs
 /home/joe/development/netcore/weatherMvc/weatherMvc/obj/Debug/netcoreapp3.1/Razor/Views/Weather/Index.cshtml.g.cs
 /home/joe/development/netcore/weatherMvc/weatherMvc/obj/Debug/netcoreapp3.1/Razor/Views/Weather/setLocation.cshtml.g.cs
 C:/Users/jzagorski/Documents/_CodeFiles/WeatherMvc/WeatherMvc/bin/Debug/netcoreapp3.1/appsettings.Development.json

@@ -20521,18 +20521,8 @@
   "RootNamespace": "weatherMvc",
   "Documents": [
     {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/Delete.cshtml",
-      "TargetPath": "Views\\Weather\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/Create.cshtml",
-      "TargetPath": "Views\\Weather\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20573,16 +20563,6 @@
     {
       "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/Edit.cshtml",
-      "TargetPath": "Views\\Weather\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/Details.cshtml",
-      "TargetPath": "Views\\Weather\\Details.cshtml",
       "FileKind": "mvc"
     },
     {

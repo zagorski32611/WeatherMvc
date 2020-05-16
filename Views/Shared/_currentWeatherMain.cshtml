@@ -8,13 +8,13 @@
         <img src="~/images/32.png" />
     </div>
     <div class="col-md-3">
-        <h2>@weatherData.currently.temperature F</h2>
+        <h3>Currently: @weatherData.currently.temperature F</h3>
     </div>
     <div class="col-md-3">
-        <h2>High: @weatherData.daily.data[0].temperatureHigh</h2>
+        <h3>High: @weatherData.daily.data[0].temperatureHigh</h3>
     </div>
     <div class="col-md-3">
-        <h2>Low: @weatherData.daily.data[0].temperatureLow</h2>
+        <h3>Low: @weatherData.daily.data[0].temperatureLow</h3>
     </div>
 </div>
 <div class="row">
@@ -22,13 +22,16 @@
 
     </div>
     <div class="col-md-3">
-        <h2>@weatherData.currently.summary</h2>
+        <h3> It is currently:</h3>
+        <h3>@weatherData.currently.summary</h3>
     </div>
     <div class="col-md-3">
-        <h4>Precipitation Chance %: @weatherData.currently.precipProbability</h4>
+        <h4>Chance of precipitation:</h4>
+        <h4>@weatherData.currently.precipProbability%</h4>
     </div>
     <div class="col-md-3">
-        <h4>Cloud cover: @weatherData.currently.cloudCover</h4>
+        <h4>Cloud cover: </h4>
+        <h4>@weatherData.currently.cloudCover</h4>
     </div>
 </div>
 <div class="row">
@@ -36,15 +39,18 @@
 
     </div>
     <div class="col-md-3">
-        <h4>This is your address from Google:</h4>
-        <h4>@locationData.results[0].formatted_address</h4>
+        <h6>This is your address from Google:</h6>
+        <h6>@locationData.results[0].formatted_address</h6>
     </div>
     <div class="col-md-3">
-        <h4>Latitude: @locationData.results[0].geometry.location.lat</h4>
-        <h4>Longitude: @locationData.results[0].geometry.location.lng</h4>
+        <h6>Latitude and Longitude: </h6>
+        <h6>@locationData.results[0].geometry.location.lat, @locationData.results[0].geometry.location.lng</h6>
     </div>
 </div>
 
+<div class="col-md-3">
+
+</div>
 @*
 <!--
 @foreach(var day in @weatherData.daily.data)
