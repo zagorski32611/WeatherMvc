@@ -391,7 +391,7 @@ namespace weatherMvc.Models
     public class Southwest
     {
         [Key]
-        public int swID { get; set; } 
+        public int southwestId { get; set; } 
         public double lat { get; set; }
         public double lng { get; set; }
     }

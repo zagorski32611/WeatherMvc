@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using weatherMvc.Data;
 using weatherMvc.Models;
 using weatherMvc.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace weatherMvc.Controllers
 {
