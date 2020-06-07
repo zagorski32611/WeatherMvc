@@ -20551,6 +20551,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Shared/_mainWeatherIndex.cshtml",
+      "TargetPath": "Views\\Shared\\_mainWeatherIndex.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/joe/development/netcore/weatherMvc/weatherMvc/Views/Weather/Index.cshtml",
       "TargetPath": "Views\\Weather\\Index.cshtml",
       "FileKind": "mvc"

@@ -376,3 +376,4 @@ C:/Users/jzagorski/Documents/_CodeFiles/WeatherMvc/obj/Debug/netcoreapp3.1/weath
 C:/Users/jzagorski/Documents/_CodeFiles/WeatherMvc/obj/Debug/netcoreapp3.1/weatherMvc.pdb
 C:/Users/jzagorski/Documents/_CodeFiles/WeatherMvc/obj/Debug/netcoreapp3.1/weatherMvc.genruntimeconfig.cache
 C:/Users/jzagorski/Documents/_CodeFiles/WeatherMvc/obj/Debug/netcoreapp3.1/weatherMvc.csproj.CopyComplete
+/home/joe/development/netcore/weatherMvc/weatherMvc/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_mainWeatherIndex.cshtml.g.cs

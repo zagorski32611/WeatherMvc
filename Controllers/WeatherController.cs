@@ -10,9 +10,7 @@ namespace weatherMvc.Controllers
     public partial class WeatherController : Controller
     {
         private readonly WeatherMvcDbContext _context;
-
         private readonly ILocationService _location;
-
         private readonly IWeatherService _weatherService;
 
         public WeatherController(WeatherMvcDbContext context, ILocationService location, IWeatherService weatherService)
@@ -21,7 +19,6 @@ namespace weatherMvc.Controllers
             _location = location;
             _weatherService = weatherService;
         }
-
 
         // actual controller methods:
         public IActionResult setLocation()

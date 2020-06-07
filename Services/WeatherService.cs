@@ -54,7 +54,7 @@ namespace weatherMvc.Services
         {
             try
             {
-                _context.Add(weather);
+                await _context.AddAsync(weather);
                 await _context.SaveChangesAsync();
             }
             catch(Exception e)
